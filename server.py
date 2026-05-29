@@ -16,6 +16,12 @@ from google import genai
 from google.genai import types
 from dotenv import load_dotenv
 from urllib.parse import urlparse
+import os
+
+os.environ.setdefault(
+    "PLAYWRIGHT_BROWSERS_PATH",
+    "/opt/render/project/src/.playwright-browsers"
+)
 
 # ── Heuristic engine (Person 3) ──────────────────────────────────────────────
 try:
