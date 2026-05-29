@@ -1,7 +1,18 @@
+import os
+
+# ── MUST be the very first lines, before any other import ────────────────────
+# Forces Playwright to look for browsers inside the project directory,
+# which Render persists across build → runtime.
+# The Render dashboard env var takes priority; this is a hardcoded fallback.
+os.environ.setdefault(
+    "PLAYWRIGHT_BROWSERS_PATH",
+    "/opt/render/project/src/.playwright-browsers"
+)
+# ─────────────────────────────────────────────────────────────────────────────
+
 import asyncio
 import sys
 import base64
-import os
 import re
 import json
 from fastapi import FastAPI, HTTPException, Request, Depends
@@ -22,8 +33,7 @@ os.environ.setdefault(
     "PLAYWRIGHT_BROWSERS_PATH",
     "/opt/render/project/src/.playwright-browsers"
 )
-
-# ── Heuristic engine (Person 3) ──────────────────────────────────────────────
+# ── Heuristic engine ──────────────────────────────────────────────────────────
 try:
     from heuristic_engine import analyze_url as heuristic_analyze
     HEURISTIC_AVAILABLE = True
@@ -32,14 +42,15 @@ except ImportError:
     HEURISTIC_AVAILABLE = False
     print("⚠ heuristic_engine.py not found — heuristic scoring disabled")
 
+# ── Key manager ───────────────────────────────────────────────────────────────
+from key_manager import key_manager
+
 # ─────────────────────────────────────────────────────────────────────────────
 
 if sys.platform == "win32":
     asyncio.set_event_loop_policy(asyncio.WindowsProactorEventLoopPolicy())
 
 load_dotenv()
-
-client = genai.Client(api_key=os.getenv("GEMINI_API_KEY"))
 
 # ── Rate limiter ──────────────────────────────────────────────────────────────
 limiter = Limiter(key_func=get_remote_address)
@@ -206,10 +217,9 @@ Respond ONLY in this exact JSON format:
 # ─────────────────────────────────────────────────────────────────────────────
 
 def detonate_sync(target_url: str):
-    import asyncio
-    if sys.platform == "win32":
-        asyncio.set_event_loop_policy(asyncio.WindowsProactorEventLoopPolicy())
-    asyncio.set_event_loop(asyncio.new_event_loop())
+    # NOTE: No asyncio imports or event loop manipulation here.
+    # This is a plain sync function run in a thread — asyncio calls do nothing
+    # in this context and were removed.
     from playwright.sync_api import sync_playwright
     import time
 
@@ -224,7 +234,13 @@ def detonate_sync(target_url: str):
         with sync_playwright() as p:
             browser = p.chromium.launch(
                 headless=True,
-                args=["--no-sandbox", "--disable-setuid-sandbox", "--disable-dev-shm-usage"]
+                args=[
+                    "--no-sandbox",
+                    "--disable-setuid-sandbox",
+                    "--disable-dev-shm-usage",
+                    "--disable-gpu",        # required: Render containers have no GPU
+                    "--single-process",     # required: Render restricts subprocess forking
+                ]
             )
             context = browser.new_context(
                 user_agent="Mozilla/5.0 (Linux; Android 13; Pixel 7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Mobile Safari/537.36",
@@ -263,10 +279,20 @@ def detonate_sync(target_url: str):
         "error": error
     }
 
+
 async def detonate(target_url: str):
     import concurrent.futures
     loop = asyncio.get_event_loop()
-    with concurrent.futures.ProcessPoolExecutor() as pool:
+    # FIX: ThreadPoolExecutor instead of ProcessPoolExecutor.
+    #
+    # ProcessPoolExecutor forks a new OS process on Linux. That forked process
+    # re-derives $HOME from /etc/passwd for the worker user, so Playwright looks
+    # for Chromium in a different ~/.cache path than where the build installed it.
+    #
+    # ThreadPoolExecutor shares the parent process's environment — PLAYWRIGHT_BROWSERS_PATH
+    # is inherited correctly. Playwright's sync API is I/O-bound (browser subprocess
+    # over a socket), so there is no GIL concern here.
+    with concurrent.futures.ThreadPoolExecutor(max_workers=1) as pool:
         result = await loop.run_in_executor(pool, detonate_sync, target_url)
     return result
 
@@ -274,7 +300,19 @@ async def detonate(target_url: str):
 # GEMINI VISION
 # ─────────────────────────────────────────────────────────────────────────────
 
-async def analyze_with_gemini(screenshot_base64: str, final_url: str):
+async def analyze_with_gemini(screenshot_base64: str, final_url: str, _retry: bool = False):
+    current_key = await key_manager.get_key()
+    if not current_key:
+        return {
+            "is_phishing": False,
+            "confidence": 0,
+            "brand_impersonated": None,
+            "red_flags": [],
+            "reasoning": "All Gemini API keys exhausted. Cannot analyze at this time."
+        }
+
+    client = genai.Client(api_key=current_key)
+
     try:
         response = await client.aio.models.generate_content(
             model="gemini-2.5-flash",
@@ -323,16 +361,35 @@ async def analyze_with_gemini(screenshot_base64: str, final_url: str):
         return result
 
     except Exception as e:
-        print(f"GEMINI ANALYSIS FAILED: {str(e)}")
+        err = str(e)
+        # Detect quota/rate-limit errors and rotate to next key
+        if any(signal in err.lower() for signal in ["quota", "429", "exhausted", "rate limit", "resource_exhausted"]):
+            print(f"GEMINI KEY QUOTA HIT: rotating key. Error: {err}")
+            await key_manager.mark_exhausted(current_key)
+            if not _retry:
+                return await analyze_with_gemini(screenshot_base64, final_url, _retry=True)
+        print(f"GEMINI ANALYSIS FAILED: {err}")
         return {
             "is_phishing": False,
             "confidence": 0,
             "brand_impersonated": None,
             "red_flags": [],
-            "reasoning": f"Gemini analysis failed: {str(e)}"
+            "reasoning": f"Gemini analysis failed: {err}"
         }
 
-async def analyze_url_text_with_gemini(url: str, technical_flags: list, heuristic_flags: list) -> dict:
+async def analyze_url_text_with_gemini(url: str, technical_flags: list, heuristic_flags: list, _retry: bool = False) -> dict:
+    current_key = await key_manager.get_key()
+    if not current_key:
+        return {
+            "is_phishing": False,
+            "confidence": 0,
+            "brand_impersonated": None,
+            "red_flags": [],
+            "reasoning": "All Gemini API keys exhausted. Cannot analyze at this time."
+        }
+
+    client = genai.Client(api_key=current_key)
+
     try:
         flags_text = "\n".join(f"- {f}" for f in technical_flags + heuristic_flags) or "None detected."
         prompt = f"""
@@ -384,13 +441,20 @@ Respond ONLY in this exact JSON format with English text only:
         return result
 
     except Exception as e:
-        print(f"GEMINI URL ANALYSIS FAILED: {str(e)}")
+        err = str(e)
+        # Detect quota/rate-limit errors and rotate to next key
+        if any(signal in err.lower() for signal in ["quota", "429", "exhausted", "rate limit", "resource_exhausted"]):
+            print(f"GEMINI KEY QUOTA HIT: rotating key. Error: {err}")
+            await key_manager.mark_exhausted(current_key)
+            if not _retry:
+                return await analyze_url_text_with_gemini(url, technical_flags, heuristic_flags, _retry=True)
+        print(f"GEMINI URL ANALYSIS FAILED: {err}")
         return {
             "is_phishing": False,
             "confidence": 0,
             "brand_impersonated": None,
             "red_flags": [],
-            "reasoning": f"Could not analyze this URL: {str(e)}"
+            "reasoning": f"Could not analyze this URL: {err}"
         }
 
 # ─────────────────────────────────────────────────────────────────────────────
@@ -619,3 +683,14 @@ def health():
         "status": "PhishSense backend is running",
         "heuristicEngine": HEURISTIC_AVAILABLE
     }
+
+
+@app.get("/keys/status")
+async def keys_status(_: str = Depends(verify_api_key)):
+    return key_manager.status
+
+
+@app.post("/keys/reset")
+async def keys_reset(_: str = Depends(verify_api_key)):
+    await key_manager.reset()
+    return {"message": "All API keys have been reset.", "status": key_manager.status}
