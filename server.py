@@ -1,9 +1,6 @@
 import os
 
 # ── MUST be the very first lines, before any other import ────────────────────
-# Forces Playwright to look for browsers inside the project directory,
-# which Render persists across build → runtime.
-# The Render dashboard env var takes priority; this is a hardcoded fallback.
 os.environ.setdefault(
     "PLAYWRIGHT_BROWSERS_PATH",
     "/opt/render/project/src/.playwright-browsers"
@@ -27,12 +24,7 @@ from google import genai
 from google.genai import types
 from dotenv import load_dotenv
 from urllib.parse import urlparse
-import os
 
-os.environ.setdefault(
-    "PLAYWRIGHT_BROWSERS_PATH",
-    "/opt/render/project/src/.playwright-browsers"
-)
 # ── Heuristic engine ──────────────────────────────────────────────────────────
 try:
     from heuristic_engine import analyze_url as heuristic_analyze
@@ -217,9 +209,6 @@ Respond ONLY in this exact JSON format:
 # ─────────────────────────────────────────────────────────────────────────────
 
 def detonate_sync(target_url: str):
-    # NOTE: No asyncio imports or event loop manipulation here.
-    # This is a plain sync function run in a thread — asyncio calls do nothing
-    # in this context and were removed.
     from playwright.sync_api import sync_playwright
     import time
 
@@ -238,8 +227,8 @@ def detonate_sync(target_url: str):
                     "--no-sandbox",
                     "--disable-setuid-sandbox",
                     "--disable-dev-shm-usage",
-                    "--disable-gpu",        # required: Render containers have no GPU
-                    "--single-process",     # required: Render restricts subprocess forking
+                    "--disable-gpu",
+                    "--single-process",
                 ]
             )
             context = browser.new_context(
@@ -283,15 +272,6 @@ def detonate_sync(target_url: str):
 async def detonate(target_url: str):
     import concurrent.futures
     loop = asyncio.get_event_loop()
-    # FIX: ThreadPoolExecutor instead of ProcessPoolExecutor.
-    #
-    # ProcessPoolExecutor forks a new OS process on Linux. That forked process
-    # re-derives $HOME from /etc/passwd for the worker user, so Playwright looks
-    # for Chromium in a different ~/.cache path than where the build installed it.
-    #
-    # ThreadPoolExecutor shares the parent process's environment — PLAYWRIGHT_BROWSERS_PATH
-    # is inherited correctly. Playwright's sync API is I/O-bound (browser subprocess
-    # over a socket), so there is no GIL concern here.
     with concurrent.futures.ThreadPoolExecutor(max_workers=1) as pool:
         result = await loop.run_in_executor(pool, detonate_sync, target_url)
     return result
@@ -303,13 +283,22 @@ async def detonate(target_url: str):
 async def analyze_with_gemini(screenshot_base64: str, final_url: str, _retry: bool = False):
     current_key = await key_manager.get_key()
     if not current_key:
+        print("❌ No Gemini keys available")
         return {
-            "is_phishing": False,
-            "confidence": 0,
+            "ai_available": False,
+            "is_phishing": None,
+            "confidence": None,
             "brand_impersonated": None,
             "red_flags": [],
             "reasoning": "AI analysis is temporarily unavailable due to high demand. Please try again shortly."
         }
+
+    # ── Key identity logging ──────────────────────────────────────────────────
+    try:
+        key_num = key_manager.keys.index(current_key) + 1
+    except (ValueError, AttributeError):
+        key_num = "?"
+    print(f"🔑 Using Gemini Key #{key_num} (vision)")
 
     client = genai.Client(api_key=current_key)
 
@@ -358,36 +347,48 @@ async def analyze_with_gemini(screenshot_base64: str, final_url: str, _retry: bo
             else:
                 result["reasoning"] = "This page appears legitimate. No phishing indicators detected."
 
+        print(f"✅ Gemini Key #{key_num} (vision) succeeded")
         return result
 
     except Exception as e:
         err = str(e)
+        print(f"❌ Gemini Key #{key_num} (vision) failed: {e}")
         # Detect quota/rate-limit errors and rotate to next key
         if any(signal in err.lower() for signal in ["quota", "429", "exhausted", "rate limit", "resource_exhausted"]):
-            print(f"GEMINI KEY QUOTA HIT: rotating key. Error: {err}")
+            print(f"   ↳ Quota hit — rotating to next key")
             await key_manager.mark_exhausted(current_key)
             if not _retry:
                 return await analyze_with_gemini(screenshot_base64, final_url, _retry=True)
-        print(f"GEMINI ANALYSIS FAILED: {err}")
+
     return {
-    "ai_available": False,
-    "is_phishing": None,
-    "confidence": None,
-    "brand_impersonated": None,
-    "red_flags": [],
-    "reasoning": "AI analysis is temporarily unavailable due to high demand. Please try again shortly."
-}
+        "ai_available": False,
+        "is_phishing": None,
+        "confidence": None,
+        "brand_impersonated": None,
+        "red_flags": [],
+        "reasoning": "AI analysis is temporarily unavailable due to high demand. Please try again shortly."
+    }
+
 
 async def analyze_url_text_with_gemini(url: str, technical_flags: list, heuristic_flags: list, _retry: bool = False) -> dict:
     current_key = await key_manager.get_key()
     if not current_key:
+        print("❌ No Gemini keys available (text fallback)")
         return {
-            "is_phishing": False,
-            "confidence": 0,
+            "ai_available": False,
+            "is_phishing": None,
+            "confidence": None,
             "brand_impersonated": None,
             "red_flags": [],
             "reasoning": "All Gemini API keys exhausted. Cannot analyze at this time."
         }
+
+    # ── Key identity logging ──────────────────────────────────────────────────
+    try:
+        key_num = key_manager.keys.index(current_key) + 1
+    except (ValueError, AttributeError):
+        key_num = "?"
+    print(f"🔑 Using Gemini Key #{key_num} (text fallback)")
 
     client = genai.Client(api_key=current_key)
 
@@ -439,25 +440,27 @@ Respond ONLY in this exact JSON format with English text only:
             else:
                 result["reasoning"] = "This URL does not show clear phishing indicators based on structure and domain analysis."
 
+        print(f"✅ Gemini Key #{key_num} (text fallback) succeeded")
         return result
 
     except Exception as e:
         err = str(e)
+        print(f"❌ Gemini Key #{key_num} (text fallback) failed: {e}")
         # Detect quota/rate-limit errors and rotate to next key
         if any(signal in err.lower() for signal in ["quota", "429", "exhausted", "rate limit", "resource_exhausted"]):
-            print(f"GEMINI KEY QUOTA HIT: rotating key. Error: {err}")
+            print(f"   ↳ Quota hit — rotating to next key")
             await key_manager.mark_exhausted(current_key)
             if not _retry:
                 return await analyze_url_text_with_gemini(url, technical_flags, heuristic_flags, _retry=True)
-        print(f"GEMINI URL ANALYSIS FAILED: {err}")
+
     return {
-    "ai_available": False,
-    "is_phishing": None,
-    "confidence": None,
-    "brand_impersonated": None,
-    "red_flags": [],
-    "reasoning": "AI analysis is temporarily unavailable due to high demand. Please try again shortly."
-}
+        "ai_available": False,
+        "is_phishing": None,
+        "confidence": None,
+        "brand_impersonated": None,
+        "red_flags": [],
+        "reasoning": "AI analysis is temporarily unavailable due to high demand. Please try again shortly."
+    }
 
 # ─────────────────────────────────────────────────────────────────────────────
 # HEURISTIC ENGINE
@@ -569,6 +572,31 @@ async def analyze(request: Request, body: AnalyzeRequest, _: str = Depends(verif
 
         gemini_result = await analyze_url_text_with_gemini(body.url, technical_flags, heuristic_flags)
 
+        # ── AI unavailable guard (text-only path) ────────────────────────────
+        if gemini_result.get("ai_available") is False:
+            return {
+                "finalUrl": body.url,
+                "pageTitle": "",
+                "redirectChain": [],
+                "screenshotBase64": None,
+                "forensicData": {
+                    "geminiAnalysis": gemini_result,
+                    "technicalFlags": technical_flags,
+                    "heuristicAnalysis": {
+                        "score": preliminary_report.get("heuristicScore", 0),
+                        "flags": heuristic_flags,
+                        "domainAge": preliminary_report.get("domainAge", None),
+                        "whoisData": preliminary_report.get("whoisData", {}),
+                        "isWhitelisted": preliminary_report.get("isWhitelisted", False),
+                        "whitelistMatch": preliminary_report.get("whitelistMatch", None),
+                    },
+                    "outgoingLinks": [],
+                },
+                "redFlags": [],
+                "totalRiskScore": None,
+                "verdict": "AI_UNAVAILABLE"
+            }
+
         total_risk_score = calculate_risk_score(gemini_result, preliminary_report, technical_flags)
         all_red_flags = list(set(
             gemini_result.get("red_flags", []) + technical_flags + heuristic_flags
@@ -631,30 +659,31 @@ async def analyze(request: Request, body: AnalyzeRequest, _: str = Depends(verif
     title_lower = sandbox_data["page_title"].lower()
     if any(w in title_lower for w in WARNING_TITLES):
         technical_flags.append("Page title contains security warning — link may have been flagged by another service")
-    # AI unavailable -> don't show verdict or risk score
+
+    # ── AI unavailable guard (screenshot path) ────────────────────────────────
     if gemini_result.get("ai_available") is False:
         return {
-        "finalUrl": final_url,
-        "pageTitle": sandbox_data["page_title"],
-        "redirectChain": sandbox_data["redirect_chain"],
-        "screenshotBase64": sandbox_data["screenshot_base64"],
-        "forensicData": {
-            "geminiAnalysis": gemini_result,
-            "technicalFlags": technical_flags,
-            "heuristicAnalysis": {
-                "score": preliminary_report.get("heuristicScore", 0),
-                "flags": preliminary_report.get("heuristicFlags", []),
-                "domainAge": preliminary_report.get("domainAge", None),
-                "whoisData": preliminary_report.get("whoisData", {}),
-                "isWhitelisted": preliminary_report.get("isWhitelisted", False),
-                "whitelistMatch": preliminary_report.get("whitelistMatch", None),
+            "finalUrl": final_url,
+            "pageTitle": sandbox_data["page_title"],
+            "redirectChain": sandbox_data["redirect_chain"],
+            "screenshotBase64": sandbox_data["screenshot_base64"],
+            "forensicData": {
+                "geminiAnalysis": gemini_result,
+                "technicalFlags": technical_flags,
+                "heuristicAnalysis": {
+                    "score": preliminary_report.get("heuristicScore", 0),
+                    "flags": preliminary_report.get("heuristicFlags", []),
+                    "domainAge": preliminary_report.get("domainAge", None),
+                    "whoisData": preliminary_report.get("whoisData", {}),
+                    "isWhitelisted": preliminary_report.get("isWhitelisted", False),
+                    "whitelistMatch": preliminary_report.get("whitelistMatch", None),
+                },
+                "outgoingLinks": sandbox_data["outgoing_links"],
             },
-            "outgoingLinks": sandbox_data["outgoing_links"],
-        },
-        "redFlags": [],
-        "totalRiskScore": None,
-        "verdict": "AI_UNAVAILABLE"
-    }    
+            "redFlags": [],
+            "totalRiskScore": None,
+            "verdict": "AI_UNAVAILABLE"
+        }
 
     # ── Step 5: Final risk score ──────────────────────────────────────────────
     total_risk_score = calculate_risk_score(gemini_result, preliminary_report, technical_flags)
