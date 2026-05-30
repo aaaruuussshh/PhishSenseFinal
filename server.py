@@ -216,7 +216,13 @@ Respond ONLY in this exact JSON format:
 # SANDBOX
 # ─────────────────────────────────────────────────────────────────────────────
 
-async def detonate(target_url: str) -> dict:
+def detonate_sync(target_url: str):
+    # NOTE: No asyncio imports or event loop manipulation here.
+    # This is a plain sync function run in a thread — asyncio calls do nothing
+    # in this context and were removed.
+    from playwright.sync_api import sync_playwright
+    import time
+
     redirect_chain = []
     final_url = target_url
     screenshot_base64 = None
@@ -224,36 +230,41 @@ async def detonate(target_url: str) -> dict:
     outgoing_links = []
     error = None
 
-    token = os.getenv("BROWSERLESS_TOKEN", "")
-    browserless_url = os.getenv("BROWSERLESS_WS_URL", "wss://production-sfo.browserless.io")
-    ws_endpoint = f"{browserless_url}?token={token}"
-
     try:
-        async with async_playwright() as p:
-            browser = await p.chromium.connect(ws_endpoint)
-            context = await browser.new_context(
+        with sync_playwright() as p:
+            browser = p.chromium.launch(
+                headless=True,
+                args=[
+                    "--no-sandbox",
+                    "--disable-setuid-sandbox",
+                    "--disable-dev-shm-usage",
+                    "--disable-gpu",        # required: Render containers have no GPU
+                    "--single-process",     # required: Render restricts subprocess forking
+                ]
+            )
+            context = browser.new_context(
                 user_agent="Mozilla/5.0 (Linux; Android 13; Pixel 7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Mobile Safari/537.36",
                 viewport={"width": 390, "height": 844},
                 locale="en-IN",
                 timezone_id="Asia/Kolkata",
             )
-            page = await context.new_page()
-            await page.add_init_script("Object.defineProperty(navigator, 'webdriver', {get: () => undefined});")
+            page = context.new_page()
+            page.add_init_script("Object.defineProperty(navigator, 'webdriver', {get: () => undefined});")
 
             def handle_response(response):
                 if response.status in [301, 302, 303, 307, 308]:
                     redirect_chain.append(response.url)
             page.on("response", handle_response)
 
-            await page.goto(target_url, wait_until="domcontentloaded", timeout=30000)
-            await asyncio.sleep(3)
+            page.goto(target_url, wait_until="domcontentloaded", timeout=30000)
+            time.sleep(3)
 
             final_url = page.url
-            page_title = await page.title()
-            screenshot_bytes = await page.screenshot(full_page=True)
+            page_title = page.title()
+            screenshot_bytes = page.screenshot(full_page=True)
             screenshot_base64 = base64.b64encode(screenshot_bytes).decode("utf-8")
-            outgoing_links = await page.eval_on_selector_all("a[href]", "elements => elements.map(el => el.href)")
-            await browser.close()
+            outgoing_links = page.eval_on_selector_all("a[href]", "elements => elements.map(el => el.href)")
+            browser.close()
 
     except Exception as e:
         error = str(e)
@@ -267,6 +278,23 @@ async def detonate(target_url: str) -> dict:
         "outgoing_links": outgoing_links[:20],
         "error": error
     }
+
+
+async def detonate(target_url: str):
+    import concurrent.futures
+    loop = asyncio.get_event_loop()
+    # FIX: ThreadPoolExecutor instead of ProcessPoolExecutor.
+    #
+    # ProcessPoolExecutor forks a new OS process on Linux. That forked process
+    # re-derives $HOME from /etc/passwd for the worker user, so Playwright looks
+    # for Chromium in a different ~/.cache path than where the build installed it.
+    #
+    # ThreadPoolExecutor shares the parent process's environment — PLAYWRIGHT_BROWSERS_PATH
+    # is inherited correctly. Playwright's sync API is I/O-bound (browser subprocess
+    # over a socket), so there is no GIL concern here.
+    with concurrent.futures.ThreadPoolExecutor(max_workers=1) as pool:
+        result = await loop.run_in_executor(pool, detonate_sync, target_url)
+    return result
 
 # ─────────────────────────────────────────────────────────────────────────────
 # GEMINI VISION
