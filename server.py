@@ -308,7 +308,7 @@ async def analyze_with_gemini(screenshot_base64: str, final_url: str, _retry: bo
             "confidence": 0,
             "brand_impersonated": None,
             "red_flags": [],
-            "reasoning": "All Gemini API keys exhausted. Cannot analyze at this time."
+            "reasoning": "AI analysis is temporarily unavailable due to high demand. Please try again shortly."
         }
 
     client = genai.Client(api_key=current_key)
@@ -369,13 +369,14 @@ async def analyze_with_gemini(screenshot_base64: str, final_url: str, _retry: bo
             if not _retry:
                 return await analyze_with_gemini(screenshot_base64, final_url, _retry=True)
         print(f"GEMINI ANALYSIS FAILED: {err}")
-        return {
-            "is_phishing": False,
-            "confidence": 0,
-            "brand_impersonated": None,
-            "red_flags": [],
-            "reasoning": f"Gemini analysis failed: {err}"
-        }
+    return {
+    "ai_available": False,
+    "is_phishing": None,
+    "confidence": None,
+    "brand_impersonated": None,
+    "red_flags": [],
+    "reasoning": "AI analysis is temporarily unavailable due to high demand. Please try again shortly."
+}
 
 async def analyze_url_text_with_gemini(url: str, technical_flags: list, heuristic_flags: list, _retry: bool = False) -> dict:
     current_key = await key_manager.get_key()
@@ -449,13 +450,14 @@ Respond ONLY in this exact JSON format with English text only:
             if not _retry:
                 return await analyze_url_text_with_gemini(url, technical_flags, heuristic_flags, _retry=True)
         print(f"GEMINI URL ANALYSIS FAILED: {err}")
-        return {
-            "is_phishing": False,
-            "confidence": 0,
-            "brand_impersonated": None,
-            "red_flags": [],
-            "reasoning": f"Could not analyze this URL: {err}"
-        }
+    return {
+    "ai_available": False,
+    "is_phishing": None,
+    "confidence": None,
+    "brand_impersonated": None,
+    "red_flags": [],
+    "reasoning": "AI analysis is temporarily unavailable due to high demand. Please try again shortly."
+}
 
 # ─────────────────────────────────────────────────────────────────────────────
 # HEURISTIC ENGINE
@@ -629,6 +631,30 @@ async def analyze(request: Request, body: AnalyzeRequest, _: str = Depends(verif
     title_lower = sandbox_data["page_title"].lower()
     if any(w in title_lower for w in WARNING_TITLES):
         technical_flags.append("Page title contains security warning — link may have been flagged by another service")
+    # AI unavailable -> don't show verdict or risk score
+    if gemini_result.get("ai_available") is False:
+        return {
+        "finalUrl": final_url,
+        "pageTitle": sandbox_data["page_title"],
+        "redirectChain": sandbox_data["redirect_chain"],
+        "screenshotBase64": sandbox_data["screenshot_base64"],
+        "forensicData": {
+            "geminiAnalysis": gemini_result,
+            "technicalFlags": technical_flags,
+            "heuristicAnalysis": {
+                "score": preliminary_report.get("heuristicScore", 0),
+                "flags": preliminary_report.get("heuristicFlags", []),
+                "domainAge": preliminary_report.get("domainAge", None),
+                "whoisData": preliminary_report.get("whoisData", {}),
+                "isWhitelisted": preliminary_report.get("isWhitelisted", False),
+                "whitelistMatch": preliminary_report.get("whitelistMatch", None),
+            },
+            "outgoingLinks": sandbox_data["outgoing_links"],
+        },
+        "redFlags": [],
+        "totalRiskScore": None,
+        "verdict": "AI_UNAVAILABLE"
+    }    
 
     # ── Step 5: Final risk score ──────────────────────────────────────────────
     total_risk_score = calculate_risk_score(gemini_result, preliminary_report, technical_flags)
