@@ -559,23 +559,24 @@ WARNING_TITLES = [
 @app.post("/analyze")
 @limiter.limit("10/minute")
 async def analyze(request: Request, body: AnalyzeRequest, _: str = Depends(verify_api_key)):
-    if not body.url.startswith("http"):
-        raise HTTPException(status_code=400, detail="Invalid URL. Must start with http or https.")
+    url = body.url.strip()
 
+    if not url.startswith(("http://", "https://")):
+        url = "https://" + url
     # ── Step 1: Detonate in sandbox ──────────────────────────────────────────
-    sandbox_data = await detonate(body.url)
+    sandbox_data = await detonate(url)
 
     if sandbox_data["error"] and not sandbox_data["screenshot_base64"]:
-        preliminary_report = run_heuristic_engine(body.url)
-        technical_flags = get_technical_flags(body.url)
+        preliminary_report = run_heuristic_engine(url)
+        technical_flags = get_technical_flags(url)
         heuristic_flags = preliminary_report.get("heuristicFlags", [])
 
-        gemini_result = await analyze_url_text_with_gemini(body.url, technical_flags, heuristic_flags)
+        gemini_result = await analyze_url_text_with_gemini(url, technical_flags, heuristic_flags)
 
         # ── AI unavailable guard (text-only path) ────────────────────────────
         if gemini_result.get("ai_available") is False:
             return {
-                "finalUrl": body.url,
+                "finalUrl": url,
                 "pageTitle": "",
                 "redirectChain": [],
                 "screenshotBase64": None,
@@ -603,7 +604,7 @@ async def analyze(request: Request, body: AnalyzeRequest, _: str = Depends(verif
         ))
 
         return {
-            "finalUrl": body.url,
+            "finalUrl": url,
             "pageTitle": "",
             "redirectChain": [],
             "screenshotBase64": None,
