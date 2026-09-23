@@ -1,0 +1,49 @@
+class Solution {
+public:
+
+    bool isPalindrome(string s) {
+        int left = 0;
+        int right = s.size() - 1;
+
+        while(left < right) {
+            if(s[left] != s[right]) {
+                return false;
+            }
+            left++;
+            right--;
+        }
+
+        return true;
+    }
+
+    void solve(string& s, int index,
+               vector<string>& temp,
+               vector<vector<string>>& ans) {
+
+ 
+        if(index == s.size()) {
+            ans.push_back(temp);
+            return;
+        }
+
+  
+        for(int len = 1; index + len <= s.size(); len++) {
+
+            string piece = s.substr(index, len);
+
+            if(isPalindrome(piece)) {
+
+
+                temp.push_back(piece);
+
+                solve(s, index + len, temp, ans);
+
+                temp.pop_back();
+            }
+        }
+    }
+
+    vector<vector<string>> partition(string s) {
+
+        vector<vector<string>> ans;
+        v

@@ -1,0 +1,24 @@
+{
+  "title": "Palindrome Partitioning",
+  "titleSlug": "palindrome-partitioning",
+  "frontendQuestionId": "131",
+  "leetcodeUrl": "https://leetcode.com/problems/palindrome-partitioning/",
+  "difficulty": "Medium",
+  "topics": [
+    "String",
+    "Dynamic Programming",
+    "Backtracking"
+  ],
+  "language": "Unknown",
+  "verdict": "Accepted",
+  "submissionId": null,
+  "submittedAt": "2026-09-23T16:25:36.887Z",
+  "runtimeMs": null,
+  "memoryKb": null,
+  "totalCorrect": null,
+  "totalTestcases": null,
+  "helpType": "PENDING_SELF_REPORT",
+  "helpLabel": "Pending self report",
+  "focusSeconds": null,
+  "syncedAt": "2026-09-23T16:25:38.844Z"
+}
