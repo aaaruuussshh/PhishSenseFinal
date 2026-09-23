@@ -1,0 +1,36 @@
+nition for a binary tree node.
+ * struct TreeNode {
+ *     int val;
+ *     TreeNode *left;
+ *     TreeNode *right;
+ *     TreeNode() : val(0), left(nullptr), right(nullptr) {}
+ *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+ *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
+ * };
+ */
+class Solution {
+public:
+    int tryStart(TreeNode* root, int prevValue, int length, int& maxLength){
+        if(root==nullptr){
+            return length;
+        }
+        if(root->val == prevValue){
+            length++;
+             maxLength = max(maxLength, length);
+            
+        }
+        else{
+            return length;
+        }
+        int left = tryStart(root->left, root->val, length, maxLength); 
+        int right = tryStart(root->right, root->val, length, maxLength); 
+
+        return max(left, right);
+
+        
+    }
+    void tryStarts(TreeNode* root, int& maxLength){
+        if(root==nullptr){
+            return;
+        }
+  

@@ -1,0 +1,25 @@
+{
+  "title": "Longest Univalue Path",
+  "titleSlug": "longest-univalue-path",
+  "frontendQuestionId": "687",
+  "leetcodeUrl": "https://leetcode.com/problems/longest-univalue-path/",
+  "difficulty": "Medium",
+  "topics": [
+    "Tree",
+    "Depth-First Search",
+    "Binary Tree",
+    "DP on Trees"
+  ],
+  "language": "Unknown",
+  "verdict": "Accepted",
+  "submissionId": null,
+  "submittedAt": "2026-09-23T10:45:51.259Z",
+  "runtimeMs": null,
+  "memoryKb": null,
+  "totalCorrect": null,
+  "totalTestcases": null,
+  "helpType": "PENDING_SELF_REPORT",
+  "helpLabel": "Pending self report",
+  "focusSeconds": null,
+  "syncedAt": "2026-09-23T10:45:53.146Z"
+}
