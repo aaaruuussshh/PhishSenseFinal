@@ -1,0 +1,26 @@
+{
+  "title": "Binary Tree Maximum Path Sum",
+  "titleSlug": "binary-tree-maximum-path-sum",
+  "frontendQuestionId": "124",
+  "leetcodeUrl": "https://leetcode.com/problems/binary-tree-maximum-path-sum/",
+  "difficulty": "Hard",
+  "topics": [
+    "Dynamic Programming",
+    "Tree",
+    "Depth-First Search",
+    "Binary Tree",
+    "DP on Trees"
+  ],
+  "language": "Unknown",
+  "verdict": "Accepted",
+  "submissionId": null,
+  "submittedAt": "2026-09-24T11:38:14.516Z",
+  "runtimeMs": null,
+  "memoryKb": null,
+  "totalCorrect": null,
+  "totalTestcases": null,
+  "helpType": "PENDING_SELF_REPORT",
+  "helpLabel": "Pending self report",
+  "focusSeconds": null,
+  "syncedAt": "2026-09-24T11:38:16.364Z"
+}
