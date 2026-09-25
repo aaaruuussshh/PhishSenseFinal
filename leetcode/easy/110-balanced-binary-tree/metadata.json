@@ -1,0 +1,24 @@
+{
+  "title": "Balanced Binary Tree",
+  "titleSlug": "balanced-binary-tree",
+  "frontendQuestionId": "110",
+  "leetcodeUrl": "https://leetcode.com/problems/balanced-binary-tree/",
+  "difficulty": "Easy",
+  "topics": [
+    "Tree",
+    "Depth-First Search",
+    "Binary Tree"
+  ],
+  "language": "Unknown",
+  "verdict": "Accepted",
+  "submissionId": null,
+  "submittedAt": "2026-09-25T17:15:55.065Z",
+  "runtimeMs": null,
+  "memoryKb": null,
+  "totalCorrect": null,
+  "totalTestcases": null,
+  "helpType": "PENDING_SELF_REPORT",
+  "helpLabel": "Pending self report",
+  "focusSeconds": null,
+  "syncedAt": "2026-09-25T17:15:57.333Z"
+}
