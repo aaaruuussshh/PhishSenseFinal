@@ -1,0 +1,25 @@
+{
+  "title": "Maximum Depth of Binary Tree",
+  "titleSlug": "maximum-depth-of-binary-tree",
+  "frontendQuestionId": "104",
+  "leetcodeUrl": "https://leetcode.com/problems/maximum-depth-of-binary-tree/",
+  "difficulty": "Easy",
+  "topics": [
+    "Tree",
+    "Depth-First Search",
+    "Breadth-First Search",
+    "Binary Tree"
+  ],
+  "language": "Unknown",
+  "verdict": "Accepted",
+  "submissionId": null,
+  "submittedAt": "2026-09-25T16:50:11.464Z",
+  "runtimeMs": null,
+  "memoryKb": null,
+  "totalCorrect": null,
+  "totalTestcases": null,
+  "helpType": "PENDING_SELF_REPORT",
+  "helpLabel": "Pending self report",
+  "focusSeconds": null,
+  "syncedAt": "2026-09-25T16:50:13.620Z"
+}
