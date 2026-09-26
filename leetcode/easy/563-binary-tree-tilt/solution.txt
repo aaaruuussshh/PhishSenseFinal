@@ -1,0 +1,23 @@
+ptr) {}
+ *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
+ * };
+ */
+class Solution {
+public:
+    int solve(TreeNode* root, int& sum){
+        if(root==nullptr){
+            return 0;
+        }
+        int left=solve(root->left,sum);
+        int right=solve(root->right,sum);
+        sum+=abs(left-right);
+        return left+right+root->val;
+    }
+    int findTilt(TreeNode* root) {
+        int sum=0;
+        solve(root,sum);
+        return sum;
+
+        
+    }
+};
