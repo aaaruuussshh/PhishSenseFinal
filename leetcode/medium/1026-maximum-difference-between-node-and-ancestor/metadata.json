@@ -1,0 +1,24 @@
+{
+  "title": "Maximum Difference Between Node and Ancestor",
+  "titleSlug": "maximum-difference-between-node-and-ancestor",
+  "frontendQuestionId": "1026",
+  "leetcodeUrl": "https://leetcode.com/problems/maximum-difference-between-node-and-ancestor/",
+  "difficulty": "Medium",
+  "topics": [
+    "Tree",
+    "Depth-First Search",
+    "Binary Tree"
+  ],
+  "language": "Unknown",
+  "verdict": "Accepted",
+  "submissionId": null,
+  "submittedAt": "2026-09-27T10:37:57.146Z",
+  "runtimeMs": null,
+  "memoryKb": null,
+  "totalCorrect": null,
+  "totalTestcases": null,
+  "helpType": "PENDING_SELF_REPORT",
+  "helpLabel": "Pending self report",
+  "focusSeconds": null,
+  "syncedAt": "2026-09-27T10:37:59.269Z"
+}
