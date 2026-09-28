@@ -1,0 +1,21 @@
+class Solution {
+public:
+    int maxDepth(string s) {
+        int parCount=0;
+        int MaxCount;
+        for(int i=0;i<s.length();i++){
+            if(s[i]=='('){
+                parCount++;
+
+
+            }
+            if(s[i]==')'){
+                parCount--;
+            }
+            MaxCount=max(MaxCount,parCount);
+
+        }
+        return MaxCount;
+        
+    }
+};
