@@ -12,13 +12,13 @@
   "language": "Unknown",
   "verdict": "Accepted",
   "submissionId": null,
-  "submittedAt": "2026-09-29T16:37:01.015Z",
+  "submittedAt": "2026-09-29T16:42:08.879Z",
   "runtimeMs": null,
   "memoryKb": null,
   "totalCorrect": null,
   "totalTestcases": null,
-  "helpType": "NONE",
-  "helpLabel": "Solved solo",
+  "helpType": "PENDING_SELF_REPORT",
+  "helpLabel": "Pending self report",
   "focusSeconds": null,
-  "syncedAt": "2026-09-29T16:37:29.844Z"
+  "syncedAt": "2026-09-29T16:42:11.727Z"
 }
