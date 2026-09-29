@@ -1,0 +1,26 @@
+   return same(root->left,subRoot->left) &&
+            same(root->right,subRoot->right);
+
+            
+        }
+
+
+    }
+    bool solve(TreeNode* root, TreeNode* subRoot ){
+        if(root == nullptr) {
+    return false;
+}
+        if(same(root,subRoot)){
+            return true;
+        }
+        else{
+            return solve(root->left, subRoot) ||
+       solve(root->right, subRoot);
+        }
+
+    }
+
+    bool isSubtree(TreeNode* root, TreeNode* subRoot) {
+        return solve(root, subRoot);
+    }
+};
