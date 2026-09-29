@@ -1,0 +1,24 @@
+reeNode* left=solve(root->left, p,q);
+        TreeNode* right = solve(root->right,p,q);
+
+        if(left==nullptr){
+            return right;
+        }
+        if(right==nullptr){
+            return left;
+        }
+        if(right!=nullptr && left!=nullptr){
+            return root;
+        }
+        else{
+            return nullptr;
+
+        }
+        return solve(root, p, q);
+    }
+    TreeNode* lowestCommonAncestor(TreeNode* root, TreeNode* p, TreeNode* q) {
+        return solve(root, p, q);
+        
+        
+    }
+};
