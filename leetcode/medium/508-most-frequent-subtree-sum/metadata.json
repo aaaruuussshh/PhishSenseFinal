@@ -1,0 +1,26 @@
+{
+  "title": "Most Frequent Subtree Sum",
+  "titleSlug": "most-frequent-subtree-sum",
+  "frontendQuestionId": "508",
+  "leetcodeUrl": "https://leetcode.com/problems/most-frequent-subtree-sum/",
+  "difficulty": "Medium",
+  "topics": [
+    "Hash Table",
+    "Tree",
+    "Depth-First Search",
+    "Binary Tree",
+    "DP on Trees"
+  ],
+  "language": "Unknown",
+  "verdict": "Accepted",
+  "submissionId": null,
+  "submittedAt": "2026-09-29T16:03:08.341Z",
+  "runtimeMs": null,
+  "memoryKb": null,
+  "totalCorrect": null,
+  "totalTestcases": null,
+  "helpType": "PENDING_SELF_REPORT",
+  "helpLabel": "Pending self report",
+  "focusSeconds": null,
+  "syncedAt": "2026-09-29T16:03:10.291Z"
+}
