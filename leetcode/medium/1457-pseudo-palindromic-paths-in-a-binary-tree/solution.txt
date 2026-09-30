@@ -1,0 +1,36 @@
+         int& count) {
+
+        if(root == nullptr) {
+            return;
+        }
+
+        mp[root->val]++;
+
+        if(mp[root->val] % 2 != 0) {
+            OddCount++;
+        }
+        else {
+            OddCount--;
+        }
+
+        if(root->left == nullptr && root->right == nullptr) {
+            if(OddCount <= 1) {
+                count++;
+            }
+        }
+
+        solve(root->left, mp, OddCount, count);
+        solve(root->right, mp, OddCount, count);
+
+        mp[root->val]--;  
+    }
+
+    int pseudoPalindromicPaths(TreeNode* root) {
+        int count = 0;
+        unordered_map<int,int> mp;
+
+        solve(root, mp, 0, count);
+
+        return count;
+    }
+};
