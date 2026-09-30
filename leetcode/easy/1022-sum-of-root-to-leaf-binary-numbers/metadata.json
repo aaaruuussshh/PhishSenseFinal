@@ -1,0 +1,24 @@
+{
+  "title": "Sum of Root To Leaf Binary Numbers",
+  "titleSlug": "sum-of-root-to-leaf-binary-numbers",
+  "frontendQuestionId": "1022",
+  "leetcodeUrl": "https://leetcode.com/problems/sum-of-root-to-leaf-binary-numbers/",
+  "difficulty": "Easy",
+  "topics": [
+    "Tree",
+    "Depth-First Search",
+    "Binary Tree"
+  ],
+  "language": "Unknown",
+  "verdict": "Accepted",
+  "submissionId": null,
+  "submittedAt": "2026-09-30T10:40:37.183Z",
+  "runtimeMs": null,
+  "memoryKb": null,
+  "totalCorrect": null,
+  "totalTestcases": null,
+  "helpType": "PENDING_SELF_REPORT",
+  "helpLabel": "Pending self report",
+  "focusSeconds": null,
+  "syncedAt": "2026-09-30T10:40:39.080Z"
+}
