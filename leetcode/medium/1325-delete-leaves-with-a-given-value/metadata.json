@@ -1,0 +1,24 @@
+{
+  "title": "Delete Leaves With a Given Value",
+  "titleSlug": "delete-leaves-with-a-given-value",
+  "frontendQuestionId": "1325",
+  "leetcodeUrl": "https://leetcode.com/problems/delete-leaves-with-a-given-value/",
+  "difficulty": "Medium",
+  "topics": [
+    "Tree",
+    "Depth-First Search",
+    "Binary Tree"
+  ],
+  "language": "Unknown",
+  "verdict": "Accepted",
+  "submissionId": null,
+  "submittedAt": "2026-09-30T11:40:48.072Z",
+  "runtimeMs": null,
+  "memoryKb": null,
+  "totalCorrect": null,
+  "totalTestcases": null,
+  "helpType": "PENDING_SELF_REPORT",
+  "helpLabel": "Pending self report",
+  "focusSeconds": null,
+  "syncedAt": "2026-09-30T11:40:50.089Z"
+}
