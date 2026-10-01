@@ -1,0 +1,24 @@
+{
+  "title": "Evaluate Boolean Binary Tree",
+  "titleSlug": "evaluate-boolean-binary-tree",
+  "frontendQuestionId": "2331",
+  "leetcodeUrl": "https://leetcode.com/problems/evaluate-boolean-binary-tree/",
+  "difficulty": "Easy",
+  "topics": [
+    "Tree",
+    "Depth-First Search",
+    "Binary Tree"
+  ],
+  "language": "Unknown",
+  "verdict": "Accepted",
+  "submissionId": null,
+  "submittedAt": "2026-10-01T10:21:40.903Z",
+  "runtimeMs": null,
+  "memoryKb": null,
+  "totalCorrect": null,
+  "totalTestcases": null,
+  "helpType": "PENDING_SELF_REPORT",
+  "helpLabel": "Pending self report",
+  "focusSeconds": null,
+  "syncedAt": "2026-10-01T10:21:42.966Z"
+}
