@@ -1,0 +1,29 @@
+class Solution {
+public:
+    pair<int,TreeNode*> solve(TreeNode* root){
+        if(root==nullptr){
+            return {0,0};
+        }
+        pair<int,TreeNode*> left= solve(root->left);
+        pair<int,TreeNode*> right=solve(root->right);
+        TreeNode* BestSubRoot;
+        if(left.first>right.first){
+            BestSubRoot=left.second;
+            
+        }
+        else if(left.first<right.first){
+            BestSubRoot=right.second;
+        }
+        else{
+            BestSubRoot=root;
+        }
+        return {1+max(left.first,right.first), BestSubRoot};
+
+
+    }
+    TreeNode* lcaDeepestLeaves(TreeNode* root) {
+                pair<int, TreeNode*> result = solve(root);
+        return result.second;
+        
+    }
+};
