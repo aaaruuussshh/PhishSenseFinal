@@ -1,0 +1,36 @@
+
+        ListNode* curr = head;
+        while(counter<left){
+            prev=curr;
+            curr=curr->next;
+            counter++;
+        }
+
+        int NodesToReverse = right-left+1;
+        ListNode* OldLeft=curr;
+        ListNode* before = prev;
+        prev = nullptr;
+        for(int i=0;i<NodesToReverse;i++){
+            
+            ListNode* temp = curr->next;
+            curr->next=prev;
+            prev=curr;
+            curr=temp;
+
+        }
+        OldLeft->next = curr;
+        
+
+        if(before != nullptr)
+    before->next = prev;
+else
+    head = prev;
+
+OldLeft->next = curr;
+
+return head;
+    
+
+        
+    }
+};
