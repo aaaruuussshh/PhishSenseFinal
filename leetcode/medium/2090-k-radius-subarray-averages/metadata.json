@@ -1,0 +1,23 @@
+{
+  "title": "K Radius Subarray Averages",
+  "titleSlug": "k-radius-subarray-averages",
+  "frontendQuestionId": "2090",
+  "leetcodeUrl": "https://leetcode.com/problems/k-radius-subarray-averages/",
+  "difficulty": "Medium",
+  "topics": [
+    "Array",
+    "Sliding Window"
+  ],
+  "language": "Unknown",
+  "verdict": "Accepted",
+  "submissionId": null,
+  "submittedAt": "2026-10-02T07:30:31.071Z",
+  "runtimeMs": null,
+  "memoryKb": null,
+  "totalCorrect": null,
+  "totalTestcases": null,
+  "helpType": "PENDING_SELF_REPORT",
+  "helpLabel": "Pending self report",
+  "focusSeconds": null,
+  "syncedAt": "2026-10-02T07:30:33.586Z"
+}
