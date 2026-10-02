@@ -1,0 +1,25 @@
+{
+  "title": "Add One Row to Tree",
+  "titleSlug": "add-one-row-to-tree",
+  "frontendQuestionId": "623",
+  "leetcodeUrl": "https://leetcode.com/problems/add-one-row-to-tree/",
+  "difficulty": "Medium",
+  "topics": [
+    "Tree",
+    "Depth-First Search",
+    "Breadth-First Search",
+    "Binary Tree"
+  ],
+  "language": "Unknown",
+  "verdict": "Accepted",
+  "submissionId": null,
+  "submittedAt": "2026-10-02T10:11:15.606Z",
+  "runtimeMs": null,
+  "memoryKb": null,
+  "totalCorrect": null,
+  "totalTestcases": null,
+  "helpType": "PENDING_SELF_REPORT",
+  "helpLabel": "Pending self report",
+  "focusSeconds": null,
+  "syncedAt": "2026-10-02T10:11:17.464Z"
+}

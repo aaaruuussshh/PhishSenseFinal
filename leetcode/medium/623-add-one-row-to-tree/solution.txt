@@ -1,0 +1,30 @@
+ TreeNode() : val(0), left(nullptr), right(nullptr) {}
+ *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+ *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
+ * };
+ */
+class Solution {
+public:
+    TreeNode* solve(TreeNode* root, int val, int depth,int currDepth){
+        if(root==nullptr){
+            return nullptr;
+        }
+        if(depth == 1){
+    TreeNode* newRoot = new TreeNode(val);
+    newRoot->left = root;
+    return newRoot;
+}
+        
+        if(currDepth==depth-1){
+                TreeNode* oldLeft = root->left;
+                TreeNode* oldRight = root->right;
+                TreeNode* newLeftNode = new TreeNode(val);
+                TreeNode* newRightNode = new TreeNode(val);
+                root->left=newLeftNode;
+                root->right=newRightNode;
+                newLeftNode->left=oldLeft;
+                newRightNode->right=oldRight;
+                
+
+        }
+        solve(root->left,val,depth,currDep
