@@ -1,0 +1,25 @@
+{
+  "title": "Construct String from Binary Tree",
+  "titleSlug": "construct-string-from-binary-tree",
+  "frontendQuestionId": "606",
+  "leetcodeUrl": "https://leetcode.com/problems/construct-string-from-binary-tree/",
+  "difficulty": "Medium",
+  "topics": [
+    "String",
+    "Tree",
+    "Depth-First Search",
+    "Binary Tree"
+  ],
+  "language": "Unknown",
+  "verdict": "Accepted",
+  "submissionId": null,
+  "submittedAt": "2026-10-03T07:33:02.484Z",
+  "runtimeMs": null,
+  "memoryKb": null,
+  "totalCorrect": null,
+  "totalTestcases": null,
+  "helpType": "PENDING_SELF_REPORT",
+  "helpLabel": "Pending self report",
+  "focusSeconds": null,
+  "syncedAt": "2026-10-03T07:33:04.382Z"
+}

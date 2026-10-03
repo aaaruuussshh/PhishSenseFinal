@@ -1,0 +1,24 @@
+class Solution {
+public:
+    string solve(TreeNode* root) {
+        if(root == nullptr) {
+            return "";
+        }
+
+        string ans = to_string(root->val);
+        if(root->left == nullptr && root->right != nullptr) {
+            ans += "()" + ("(" + solve(root->right) + ")");
+        }
+        else if(root->left != nullptr && root->right == nullptr) {
+            ans += "(" + solve(root->left) + ")";
+        }
+
+        else if(root->left != nullptr && root->right != nullptr) {
+            ans += "(" + solve(root->left) + ")";
+            ans += "(" + solve(root->right) + ")";
+        }
+
+        return ans;
+    }
+
+    string tree2str(TreeNode* roo
