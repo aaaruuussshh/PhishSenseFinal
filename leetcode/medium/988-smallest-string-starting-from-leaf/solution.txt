@@ -1,0 +1,26 @@
+ string path){
+        if(root==nullptr){
+            return;
+
+        }
+        path+=('a'+root->val);
+        if(root->left==nullptr && root->right==nullptr){
+            string temp = path;
+            reverse(temp.begin(),temp.end());
+            if(temp<bestAns){
+                bestAns=temp;
+            }
+           
+
+        }
+         solve(root->left,bestAns,path);
+            solve(root->right,bestAns,path);
+    }
+    string smallestFromLeaf(TreeNode* root) {
+        string bestAns= "{";
+        string path = "";
+        solve(root,bestAns,path);
+        return bestAns;
+        
+    }
+};

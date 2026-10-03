@@ -1,0 +1,26 @@
+{
+  "title": "Smallest String Starting From Leaf",
+  "titleSlug": "smallest-string-starting-from-leaf",
+  "frontendQuestionId": "988",
+  "leetcodeUrl": "https://leetcode.com/problems/smallest-string-starting-from-leaf/",
+  "difficulty": "Medium",
+  "topics": [
+    "String",
+    "Backtracking",
+    "Tree",
+    "Depth-First Search",
+    "Binary Tree"
+  ],
+  "language": "Unknown",
+  "verdict": "Accepted",
+  "submissionId": null,
+  "submittedAt": "2026-10-03T07:04:19.261Z",
+  "runtimeMs": null,
+  "memoryKb": null,
+  "totalCorrect": null,
+  "totalTestcases": null,
+  "helpType": "PENDING_SELF_REPORT",
+  "helpLabel": "Pending self report",
+  "focusSeconds": null,
+  "syncedAt": "2026-10-03T07:04:21.096Z"
+}
