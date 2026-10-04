@@ -1,0 +1,17 @@
+class Solution {
+public:
+    int minRotations(string s) {
+        int results = 0;
+        results = min(s[0] - '0', 10 - (s[0] - '0'));
+        for(int i=1;i<s.size();i++){
+            
+            int temp = abs(s[i]-s[i-1]);
+            results+=min(temp,10-temp);
+
+
+            
+        }
+        return results;
+        
+    }
+};
