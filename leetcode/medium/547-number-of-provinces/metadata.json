@@ -1,0 +1,25 @@
+{
+  "title": "Number of Provinces",
+  "titleSlug": "number-of-provinces",
+  "frontendQuestionId": "547",
+  "leetcodeUrl": "https://leetcode.com/problems/number-of-provinces/",
+  "difficulty": "Medium",
+  "topics": [
+    "Depth-First Search",
+    "Breadth-First Search",
+    "Union-Find",
+    "Graph Theory"
+  ],
+  "language": "Unknown",
+  "verdict": "Accepted",
+  "submissionId": null,
+  "submittedAt": "2026-10-16T12:30:14.346Z",
+  "runtimeMs": null,
+  "memoryKb": null,
+  "totalCorrect": null,
+  "totalTestcases": null,
+  "helpType": "PENDING_SELF_REPORT",
+  "helpLabel": "Pending self report",
+  "focusSeconds": null,
+  "syncedAt": "2026-10-16T12:30:16.224Z"
+}
