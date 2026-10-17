@@ -1,0 +1,26 @@
+    while(root != nullptr) {
+            h++;
+            root = root->right;
+        }
+        return h;
+    }
+
+    int solve(TreeNode* root) {
+        if(root == nullptr) {
+            return 0;
+        }
+
+        int left = leftHeight(root);
+        int right = rightHeight(root);
+
+        if(left == right) {
+            return (1 << left) - 1;
+        }
+
+        return 1 + solve(root->left) + solve(root->right);
+    }
+
+    int countNodes(TreeNode* root) {
+        return solve(root);
+    }
+};
