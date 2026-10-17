@@ -1,0 +1,24 @@
+{
+  "title": "Contains Duplicate",
+  "titleSlug": "contains-duplicate",
+  "frontendQuestionId": "217",
+  "leetcodeUrl": "https://leetcode.com/problems/contains-duplicate/",
+  "difficulty": "Easy",
+  "topics": [
+    "Array",
+    "Hash Table",
+    "Sorting"
+  ],
+  "language": "Unknown",
+  "verdict": "Accepted",
+  "submissionId": null,
+  "submittedAt": "2026-10-17T14:32:20.037Z",
+  "runtimeMs": null,
+  "memoryKb": null,
+  "totalCorrect": null,
+  "totalTestcases": null,
+  "helpType": "PENDING_SELF_REPORT",
+  "helpLabel": "Pending self report",
+  "focusSeconds": null,
+  "syncedAt": "2026-10-17T14:32:21.948Z"
+}
