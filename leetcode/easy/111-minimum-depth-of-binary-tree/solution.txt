@@ -1,0 +1,27 @@
+{}
+ *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
+ * };
+ */
+class Solution {
+public:
+    int solve(TreeNode* root){
+        if(root==nullptr){
+            return 0;
+        }
+
+       int left=solve(root->left);
+       int right=solve(root->right);
+               if(root->left !=nullptr && root->right==nullptr){
+            return 1+left;
+        }
+                if(root->left ==nullptr && root->right!=nullptr){
+            return 1+right;
+        }
+       return 1+min(left,right);
+       
+
+    }
+    int minDepth(TreeNode* root) {
+        return solve(root);
+    }
+};
