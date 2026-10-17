@@ -1,0 +1,26 @@
+{
+  "title": "Max Area of Island",
+  "titleSlug": "max-area-of-island",
+  "frontendQuestionId": "695",
+  "leetcodeUrl": "https://leetcode.com/problems/max-area-of-island/",
+  "difficulty": "Medium",
+  "topics": [
+    "Array",
+    "Depth-First Search",
+    "Breadth-First Search",
+    "Union-Find",
+    "Matrix"
+  ],
+  "language": "Unknown",
+  "verdict": "Accepted",
+  "submissionId": null,
+  "submittedAt": "2026-10-17T10:50:11.688Z",
+  "runtimeMs": null,
+  "memoryKb": null,
+  "totalCorrect": null,
+  "totalTestcases": null,
+  "helpType": "PENDING_SELF_REPORT",
+  "helpLabel": "Pending self report",
+  "focusSeconds": null,
+  "syncedAt": "2026-10-17T10:50:13.562Z"
+}
