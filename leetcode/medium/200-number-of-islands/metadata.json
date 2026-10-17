@@ -1,0 +1,26 @@
+{
+  "title": "Number of Islands",
+  "titleSlug": "number-of-islands",
+  "frontendQuestionId": "200",
+  "leetcodeUrl": "https://leetcode.com/problems/number-of-islands/",
+  "difficulty": "Medium",
+  "topics": [
+    "Array",
+    "Depth-First Search",
+    "Breadth-First Search",
+    "Union-Find",
+    "Matrix"
+  ],
+  "language": "Unknown",
+  "verdict": "Accepted",
+  "submissionId": null,
+  "submittedAt": "2026-10-17T09:12:57.437Z",
+  "runtimeMs": null,
+  "memoryKb": null,
+  "totalCorrect": null,
+  "totalTestcases": null,
+  "helpType": "PENDING_SELF_REPORT",
+  "helpLabel": "Pending self report",
+  "focusSeconds": null,
+  "syncedAt": "2026-10-17T09:12:59.484Z"
+}
