@@ -1,0 +1,24 @@
+{
+  "title": "Rotting Oranges",
+  "titleSlug": "rotting-oranges",
+  "frontendQuestionId": "994",
+  "leetcodeUrl": "https://leetcode.com/problems/rotting-oranges/",
+  "difficulty": "Medium",
+  "topics": [
+    "Array",
+    "Breadth-First Search",
+    "Matrix"
+  ],
+  "language": "Unknown",
+  "verdict": "Accepted",
+  "submissionId": null,
+  "submittedAt": "2026-10-18T09:25:28.288Z",
+  "runtimeMs": null,
+  "memoryKb": null,
+  "totalCorrect": null,
+  "totalTestcases": null,
+  "helpType": "PENDING_SELF_REPORT",
+  "helpLabel": "Pending self report",
+  "focusSeconds": null,
+  "syncedAt": "2026-10-18T09:25:30.110Z"
+}
