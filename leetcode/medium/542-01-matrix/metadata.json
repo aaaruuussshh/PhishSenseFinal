@@ -1,0 +1,25 @@
+{
+  "title": "01 Matrix",
+  "titleSlug": "01-matrix",
+  "frontendQuestionId": "542",
+  "leetcodeUrl": "https://leetcode.com/problems/01-matrix/",
+  "difficulty": "Medium",
+  "topics": [
+    "Array",
+    "Dynamic Programming",
+    "Breadth-First Search",
+    "Matrix"
+  ],
+  "language": "Unknown",
+  "verdict": "Accepted",
+  "submissionId": null,
+  "submittedAt": "2026-10-19T08:45:03.459Z",
+  "runtimeMs": null,
+  "memoryKb": null,
+  "totalCorrect": null,
+  "totalTestcases": null,
+  "helpType": "PENDING_SELF_REPORT",
+  "helpLabel": "Pending self report",
+  "focusSeconds": null,
+  "syncedAt": "2026-10-19T08:45:05.469Z"
+}
