@@ -1,0 +1,24 @@
+{
+  "title": "Shortest Path in Binary Matrix",
+  "titleSlug": "shortest-path-in-binary-matrix",
+  "frontendQuestionId": "1091",
+  "leetcodeUrl": "https://leetcode.com/problems/shortest-path-in-binary-matrix/",
+  "difficulty": "Medium",
+  "topics": [
+    "Array",
+    "Breadth-First Search",
+    "Matrix"
+  ],
+  "language": "Unknown",
+  "verdict": "Accepted",
+  "submissionId": null,
+  "submittedAt": "2026-10-19T09:50:36.759Z",
+  "runtimeMs": null,
+  "memoryKb": null,
+  "totalCorrect": null,
+  "totalTestcases": null,
+  "helpType": "PENDING_SELF_REPORT",
+  "helpLabel": "Pending self report",
+  "focusSeconds": null,
+  "syncedAt": "2026-10-19T09:50:38.622Z"
+}

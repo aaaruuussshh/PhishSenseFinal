@@ -1,0 +1,27 @@
+   if(r == n-1 && c == n-1) {
+                    return length;
+                }
+
+                for(int d = 0; d < 8; d++) {
+                    int nr = r + dr[d];
+                    int nc = c + dc[d];
+
+
+                    if(nr < 0 || nc < 0 || nr >= n || nc >= n) {
+                        continue;
+                    }
+                    if(grid[nr][nc] == 1 || visited[nr][nc]) {
+                        continue;
+                    }
+
+            visited[nr][nc] = true;
+            q.push({nr, nc});
+                }
+            }
+
+            length++;
+        }
+
+        return -1;
+    }
+};
