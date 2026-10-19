@@ -1,0 +1,25 @@
+{
+  "title": "Island Perimeter",
+  "titleSlug": "island-perimeter",
+  "frontendQuestionId": "463",
+  "leetcodeUrl": "https://leetcode.com/problems/island-perimeter/",
+  "difficulty": "Easy",
+  "topics": [
+    "Array",
+    "Depth-First Search",
+    "Breadth-First Search",
+    "Matrix"
+  ],
+  "language": "Unknown",
+  "verdict": "Accepted",
+  "submissionId": null,
+  "submittedAt": "2026-10-19T10:11:10.479Z",
+  "runtimeMs": null,
+  "memoryKb": null,
+  "totalCorrect": null,
+  "totalTestcases": null,
+  "helpType": "PENDING_SELF_REPORT",
+  "helpLabel": "Pending self report",
+  "focusSeconds": null,
+  "syncedAt": "2026-10-19T10:11:12.557Z"
+}
