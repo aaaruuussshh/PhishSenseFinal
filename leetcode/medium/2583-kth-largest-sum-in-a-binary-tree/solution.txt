@@ -1,0 +1,29 @@
+         for(int i=0;i<size;i++){
+            TreeNode* curr = q.front();
+            
+            q.pop();
+            levelSum+=curr->val;
+            if(curr->left !=nullptr){
+                q.push(curr->left);
+
+            }
+            if(curr->right !=nullptr){
+                q.push(curr->right);
+            }
+
+            }
+ levelSumArr.push_back(levelSum);
+        }
+       if (levelSumArr.size() < k) {
+    return -1;
+}
+sort(levelSumArr.begin(), levelSumArr.end(), greater<long long>());
+
+
+
+        return levelSumArr[k-1];
+
+
+        
+    }
+};
