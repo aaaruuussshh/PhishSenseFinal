@@ -1,0 +1,23 @@
+{
+  "title": "Root Equals Sum of Children",
+  "titleSlug": "root-equals-sum-of-children",
+  "frontendQuestionId": "2236",
+  "leetcodeUrl": "https://leetcode.com/problems/root-equals-sum-of-children/",
+  "difficulty": "Easy",
+  "topics": [
+    "Tree",
+    "Binary Tree"
+  ],
+  "language": "Unknown",
+  "verdict": "Accepted",
+  "submissionId": null,
+  "submittedAt": "2026-10-20T13:47:05.481Z",
+  "runtimeMs": null,
+  "memoryKb": null,
+  "totalCorrect": null,
+  "totalTestcases": null,
+  "helpType": "PENDING_SELF_REPORT",
+  "helpLabel": "Pending self report",
+  "focusSeconds": null,
+  "syncedAt": "2026-10-20T13:47:07.307Z"
+}
