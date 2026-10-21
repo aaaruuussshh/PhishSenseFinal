@@ -1,0 +1,24 @@
+r<vector<bool>> pacific(rows, vector<bool>(cols, false));
+vector<vector<bool>> atlantic(rows, vector<bool>(cols, false));
+        for (int c = 0; c < cols; c++) {
+        dfs(heights, 0, c, pacific);
+    }
+        for (int r = 0; r < rows; r++) {
+        dfs(heights, r, 0, pacific);
+    }
+        for (int c = 0; c < cols; c++) {
+        dfs(heights, rows - 1, c, atlantic);
+    }
+        for (int r = 0; r < rows; r++) {
+        dfs(heights, r, cols - 1, atlantic);
+    }
+        for (int r = 0; r < rows; r++) {
+        for (int c = 0; c < cols; c++) {
+            if (pacific[r][c] && atlantic[r][c]) {
+                ans.push_back({r, c});
+            }
+        }
+    }
+        return ans;
+    }
+};
