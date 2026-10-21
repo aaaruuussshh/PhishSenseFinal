@@ -1,0 +1,26 @@
+{
+  "title": "Number of Enclaves",
+  "titleSlug": "number-of-enclaves",
+  "frontendQuestionId": "1020",
+  "leetcodeUrl": "https://leetcode.com/problems/number-of-enclaves/",
+  "difficulty": "Medium",
+  "topics": [
+    "Array",
+    "Depth-First Search",
+    "Breadth-First Search",
+    "Union-Find",
+    "Matrix"
+  ],
+  "language": "Unknown",
+  "verdict": "Accepted",
+  "submissionId": null,
+  "submittedAt": "2026-10-21T10:35:17.796Z",
+  "runtimeMs": null,
+  "memoryKb": null,
+  "totalCorrect": null,
+  "totalTestcases": null,
+  "helpType": "PENDING_SELF_REPORT",
+  "helpLabel": "Pending self report",
+  "focusSeconds": null,
+  "syncedAt": "2026-10-21T10:35:19.878Z"
+}

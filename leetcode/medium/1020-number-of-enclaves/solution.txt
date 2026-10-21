@@ -1,0 +1,33 @@
+laves(vector<vector<int>>& grid) {
+        int rows=grid.size();
+        int cols = grid[0].size();
+        for(int r=0;r<rows;r++){
+            dfs(grid,r,0);
+        }
+        for (int c = 0; c < cols; c++) {
+    if (grid[0][c] == 1)
+        dfs(grid, 0, c);
+
+}
+for (int c = 0; c < cols; c++) {
+    if (grid[rows - 1][c] == 1)
+        dfs(grid, rows - 1, c);
+}
+for (int r = 0; r < rows; r++) {
+    if (grid[r][cols - 1] == 1)
+        dfs(grid, r, cols - 1);
+}
+int count=0;
+for(int r=0;r<rows;r++){
+    for(int c=0;c<cols;c++){
+        if(grid[r][c]==1){
+            count++;
+        }
+    }
+}
+return count;
+
+
+        
+    }
+};
