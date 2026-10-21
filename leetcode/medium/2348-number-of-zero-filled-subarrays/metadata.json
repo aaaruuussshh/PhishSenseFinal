@@ -1,0 +1,23 @@
+{
+  "title": "Number of Zero-Filled Subarrays",
+  "titleSlug": "number-of-zero-filled-subarrays",
+  "frontendQuestionId": "2348",
+  "leetcodeUrl": "https://leetcode.com/problems/number-of-zero-filled-subarrays/",
+  "difficulty": "Medium",
+  "topics": [
+    "Array",
+    "Math"
+  ],
+  "language": "Unknown",
+  "verdict": "Accepted",
+  "submissionId": null,
+  "submittedAt": "2026-10-21T13:55:56.386Z",
+  "runtimeMs": null,
+  "memoryKb": null,
+  "totalCorrect": null,
+  "totalTestcases": null,
+  "helpType": "PENDING_SELF_REPORT",
+  "helpLabel": "Pending self report",
+  "focusSeconds": null,
+  "syncedAt": "2026-10-21T13:55:58.292Z"
+}
