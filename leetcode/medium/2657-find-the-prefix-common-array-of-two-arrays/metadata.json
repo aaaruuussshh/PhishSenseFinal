@@ -1,0 +1,24 @@
+{
+  "title": "Find the Prefix Common Array of Two Arrays",
+  "titleSlug": "find-the-prefix-common-array-of-two-arrays",
+  "frontendQuestionId": "2657",
+  "leetcodeUrl": "https://leetcode.com/problems/find-the-prefix-common-array-of-two-arrays/",
+  "difficulty": "Medium",
+  "topics": [
+    "Array",
+    "Hash Table",
+    "Bit Manipulation"
+  ],
+  "language": "Unknown",
+  "verdict": "Accepted",
+  "submissionId": null,
+  "submittedAt": "2026-10-21T13:14:03.228Z",
+  "runtimeMs": null,
+  "memoryKb": null,
+  "totalCorrect": null,
+  "totalTestcases": null,
+  "helpType": "PENDING_SELF_REPORT",
+  "helpLabel": "Pending self report",
+  "focusSeconds": null,
+  "syncedAt": "2026-10-21T13:14:05.075Z"
+}
