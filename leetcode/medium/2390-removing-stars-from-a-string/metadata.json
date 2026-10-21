@@ -1,0 +1,24 @@
+{
+  "title": "Removing Stars From a String",
+  "titleSlug": "removing-stars-from-a-string",
+  "frontendQuestionId": "2390",
+  "leetcodeUrl": "https://leetcode.com/problems/removing-stars-from-a-string/",
+  "difficulty": "Medium",
+  "topics": [
+    "String",
+    "Stack",
+    "Simulation"
+  ],
+  "language": "Unknown",
+  "verdict": "Accepted",
+  "submissionId": null,
+  "submittedAt": "2026-10-21T13:37:32.945Z",
+  "runtimeMs": null,
+  "memoryKb": null,
+  "totalCorrect": null,
+  "totalTestcases": null,
+  "helpType": "PENDING_SELF_REPORT",
+  "helpLabel": "Pending self report",
+  "focusSeconds": null,
+  "syncedAt": "2026-10-21T13:37:34.739Z"
+}
