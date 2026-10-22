@@ -1,0 +1,42 @@
+op();
+            if(temp->left != nullptr){
+                adj[temp->val].push_back(temp->left->val);
+                adj[temp->left->val].push_back(temp->val);
+                q.push(temp->left);
+            }
+            if(temp->right !=nullptr){
+                adj[temp->val].push_back(temp->right->val);
+                adj[temp->right->val].push_back(temp->val);
+                q.push(temp->right);
+            }
+
+
+
+
+            }
+        
+        
+        queue<int>q2;
+        int time=-1;
+        unordered_set<int>visited;
+        q2.push(start);
+        visited.insert(start);
+        while(!q2.empty()){
+            int size=q2.size();
+            for(int i=0;i<size;i++){
+                int node=q2.front();
+                q2.pop();
+                
+       
+        for(int neighbour : adj[node]){
+            if(visited.find(neighbour) == visited.end()){
+                visited.insert(neighbour);
+                q2.push(neighbour);
+            }
+
+
+        }
+
+
+            }
+    
