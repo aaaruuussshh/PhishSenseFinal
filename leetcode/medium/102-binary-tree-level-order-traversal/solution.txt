@@ -1,0 +1,38 @@
+e *left, TreeNode *right) : val(x), left(left), right(right) {}
+ * };
+ */
+class Solution {
+public:
+    vector<vector<int>> levelOrder(TreeNode* root) {
+        if (root == nullptr) return {};
+        queue<TreeNode*>q;
+        vector<vector<int>>ans;
+        q.push(root);
+        while(!q.empty()){
+            vector<int>temp;
+            
+              int size=q.size();
+            
+          
+            for(int i=0;i<size;i++){
+                TreeNode* tp=q.front();
+                q.pop();
+                temp.push_back(tp->val);
+
+                if (tp->left != nullptr) {
+                    q.push(tp->left);
+                }
+
+                if (tp->right != nullptr) {
+                    q.push(tp->right);
+                }
+
+                
+
+            }
+
+            ans.push_back(temp);
+        }
+     return ans;   
+    }
+};
