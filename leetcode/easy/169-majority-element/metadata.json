@@ -1,0 +1,27 @@
+{
+  "title": "Majority Element",
+  "titleSlug": "majority-element",
+  "frontendQuestionId": "169",
+  "leetcodeUrl": "https://leetcode.com/problems/majority-element/",
+  "difficulty": "Easy",
+  "topics": [
+    "Array",
+    "Hash Table",
+    "Divide and Conquer",
+    "Sorting",
+    "Counting",
+    "Boyer–Moore Majority Vote Algorithm"
+  ],
+  "language": "Unknown",
+  "verdict": "Accepted",
+  "submissionId": null,
+  "submittedAt": "2026-10-22T09:34:26.945Z",
+  "runtimeMs": null,
+  "memoryKb": null,
+  "totalCorrect": null,
+  "totalTestcases": null,
+  "helpType": "NONE",
+  "helpLabel": "Solved solo",
+  "focusSeconds": null,
+  "syncedAt": "2026-10-22T09:35:18.769Z"
+}
