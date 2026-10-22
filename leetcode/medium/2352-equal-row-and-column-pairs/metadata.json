@@ -1,0 +1,25 @@
+{
+  "title": "Equal Row and Column Pairs",
+  "titleSlug": "equal-row-and-column-pairs",
+  "frontendQuestionId": "2352",
+  "leetcodeUrl": "https://leetcode.com/problems/equal-row-and-column-pairs/",
+  "difficulty": "Medium",
+  "topics": [
+    "Array",
+    "Hash Table",
+    "Matrix",
+    "Simulation"
+  ],
+  "language": "Unknown",
+  "verdict": "Accepted",
+  "submissionId": null,
+  "submittedAt": "2026-10-22T07:03:37.847Z",
+  "runtimeMs": null,
+  "memoryKb": null,
+  "totalCorrect": null,
+  "totalTestcases": null,
+  "helpType": "PENDING_SELF_REPORT",
+  "helpLabel": "Pending self report",
+  "focusSeconds": null,
+  "syncedAt": "2026-10-22T07:03:44.674Z"
+}
