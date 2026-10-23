@@ -1,0 +1,25 @@
+{
+  "title": "Binary Subarrays With Sum",
+  "titleSlug": "binary-subarrays-with-sum",
+  "frontendQuestionId": "930",
+  "leetcodeUrl": "https://leetcode.com/problems/binary-subarrays-with-sum/",
+  "difficulty": "Medium",
+  "topics": [
+    "Array",
+    "Hash Table",
+    "Sliding Window",
+    "Prefix Sum"
+  ],
+  "language": "Unknown",
+  "verdict": "Accepted",
+  "submissionId": null,
+  "submittedAt": "2026-10-23T12:47:51.381Z",
+  "runtimeMs": null,
+  "memoryKb": null,
+  "totalCorrect": null,
+  "totalTestcases": null,
+  "helpType": "EDITORIAL",
+  "helpLabel": "Used editorial",
+  "focusSeconds": null,
+  "syncedAt": "2026-10-23T12:47:58.978Z"
+}
