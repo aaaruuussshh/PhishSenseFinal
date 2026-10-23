@@ -1,0 +1,25 @@
+       ListNode* prev=NULL;
+        ListNode* temp=nullptr;
+        while(curr !=nullptr){
+            temp=curr->next;
+            curr->next=prev;
+            prev=curr;
+            curr=temp;
+
+        }
+        ListNode* first=head;
+        ListNode* second = prev;
+        while (second != nullptr){
+            ListNode* temp1=first->next;
+            first->next=second;
+            ListNode* temp2=second->next;
+            second->next=temp1;
+            first=temp1;
+            second=temp2;
+            
+
+        }
+        
+        
+    }
+};

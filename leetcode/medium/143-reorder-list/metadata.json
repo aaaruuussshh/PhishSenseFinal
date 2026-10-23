@@ -1,0 +1,25 @@
+{
+  "title": "Reorder List",
+  "titleSlug": "reorder-list",
+  "frontendQuestionId": "143",
+  "leetcodeUrl": "https://leetcode.com/problems/reorder-list/",
+  "difficulty": "Medium",
+  "topics": [
+    "Linked List",
+    "Two Pointers",
+    "Stack",
+    "Recursion"
+  ],
+  "language": "Unknown",
+  "verdict": "Accepted",
+  "submissionId": null,
+  "submittedAt": "2026-10-23T13:33:15.550Z",
+  "runtimeMs": null,
+  "memoryKb": null,
+  "totalCorrect": null,
+  "totalTestcases": null,
+  "helpType": "PENDING_SELF_REPORT",
+  "helpLabel": "Pending self report",
+  "focusSeconds": null,
+  "syncedAt": "2026-10-23T13:33:17.873Z"
+}
