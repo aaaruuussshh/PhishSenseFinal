@@ -1,0 +1,24 @@
+{
+  "title": "Rearrange Array Elements by Sign",
+  "titleSlug": "rearrange-array-elements-by-sign",
+  "frontendQuestionId": "2149",
+  "leetcodeUrl": "https://leetcode.com/problems/rearrange-array-elements-by-sign/",
+  "difficulty": "Medium",
+  "topics": [
+    "Array",
+    "Two Pointers",
+    "Simulation"
+  ],
+  "language": "Unknown",
+  "verdict": "Accepted",
+  "submissionId": null,
+  "submittedAt": "2026-10-23T06:49:41.096Z",
+  "runtimeMs": null,
+  "memoryKb": null,
+  "totalCorrect": null,
+  "totalTestcases": null,
+  "helpType": "PENDING_SELF_REPORT",
+  "helpLabel": "Pending self report",
+  "focusSeconds": null,
+  "syncedAt": "2026-10-23T06:49:43.918Z"
+}
