@@ -13,13 +13,13 @@
   "language": "Unknown",
   "verdict": "Accepted",
   "submissionId": null,
-  "submittedAt": "2026-10-23T12:47:51.381Z",
+  "submittedAt": "2026-10-23T13:07:39.505Z",
   "runtimeMs": null,
   "memoryKb": null,
   "totalCorrect": null,
   "totalTestcases": null,
-  "helpType": "EDITORIAL",
-  "helpLabel": "Used editorial",
+  "helpType": "PENDING_SELF_REPORT",
+  "helpLabel": "Pending self report",
   "focusSeconds": null,
-  "syncedAt": "2026-10-23T12:47:58.978Z"
+  "syncedAt": "2026-10-23T13:07:41.390Z"
 }
