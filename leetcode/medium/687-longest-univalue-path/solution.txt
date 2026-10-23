@@ -1,28 +1,26 @@
-class Solution {
-public:
+;
+int rightPath = 0;
+int left=dfs(root->left,length,PrevVal);
+int right=dfs(root->right,length,PrevVal);
 
-    int solve(TreeNode* root, int prevValue, int length, int& maxLength) {
-        if (root == nullptr) {
-            return length;
-        }
+if (root->left != nullptr && root->left->val == root->val) {
+    leftPath = left + 1;
+}
 
-        if (root->val == prevValue) {
-            length++;
-            maxLength = max(maxLength, length);
-        }
-        else {
-            return length;
-        }
+if (root->right != nullptr && root->right->val == root->val) {
+    rightPath = right + 1;
+}
 
-        int left = solve(root->left, root->val, length, maxLength);
-        int right = solve(root->right, root->val, length, maxLength);
-
-        return max(left, right);
+        maxLen=max(maxLen,leftPath+rightPath);
+        return max(leftPath,rightPath);
     }
-
-    void tryStarts(TreeNode* root, int& maxLength) {
-        if (root == nullptr) {
-            return;
-        }
-
-        int leftCount 
+    int longestUnivaluePath(TreeNode* root) {
+        if(root==nullptr)return 0;
+        int length=0;
+        dfs(root,length,root->val);
+        
+        return maxLen;
+        
+        
+    }
+};
