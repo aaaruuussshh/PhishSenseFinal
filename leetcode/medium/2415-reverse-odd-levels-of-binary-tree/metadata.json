@@ -1,0 +1,25 @@
+{
+  "title": "Reverse Odd Levels of Binary Tree",
+  "titleSlug": "reverse-odd-levels-of-binary-tree",
+  "frontendQuestionId": "2415",
+  "leetcodeUrl": "https://leetcode.com/problems/reverse-odd-levels-of-binary-tree/",
+  "difficulty": "Medium",
+  "topics": [
+    "Tree",
+    "Depth-First Search",
+    "Breadth-First Search",
+    "Binary Tree"
+  ],
+  "language": "Unknown",
+  "verdict": "Accepted",
+  "submissionId": null,
+  "submittedAt": "2026-10-23T04:19:03.748Z",
+  "runtimeMs": null,
+  "memoryKb": null,
+  "totalCorrect": null,
+  "totalTestcases": null,
+  "helpType": "HINT",
+  "helpLabel": "Needed hint",
+  "focusSeconds": null,
+  "syncedAt": "2026-10-23T04:19:59.195Z"
+}
