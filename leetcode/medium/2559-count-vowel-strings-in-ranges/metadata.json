@@ -1,0 +1,24 @@
+{
+  "title": "Count Vowel Strings in Ranges",
+  "titleSlug": "count-vowel-strings-in-ranges",
+  "frontendQuestionId": "2559",
+  "leetcodeUrl": "https://leetcode.com/problems/count-vowel-strings-in-ranges/",
+  "difficulty": "Medium",
+  "topics": [
+    "Array",
+    "String",
+    "Prefix Sum"
+  ],
+  "language": "Unknown",
+  "verdict": "Accepted",
+  "submissionId": null,
+  "submittedAt": "2026-10-23T04:48:25.841Z",
+  "runtimeMs": null,
+  "memoryKb": null,
+  "totalCorrect": null,
+  "totalTestcases": null,
+  "helpType": "PENDING_SELF_REPORT",
+  "helpLabel": "Pending self report",
+  "focusSeconds": null,
+  "syncedAt": "2026-10-23T04:48:27.825Z"
+}
