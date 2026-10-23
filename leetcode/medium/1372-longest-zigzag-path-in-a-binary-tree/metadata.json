@@ -1,0 +1,26 @@
+{
+  "title": "Longest ZigZag Path in a Binary Tree",
+  "titleSlug": "longest-zigzag-path-in-a-binary-tree",
+  "frontendQuestionId": "1372",
+  "leetcodeUrl": "https://leetcode.com/problems/longest-zigzag-path-in-a-binary-tree/",
+  "difficulty": "Medium",
+  "topics": [
+    "Dynamic Programming",
+    "Tree",
+    "Depth-First Search",
+    "Binary Tree",
+    "DP on Trees"
+  ],
+  "language": "Unknown",
+  "verdict": "Accepted",
+  "submissionId": null,
+  "submittedAt": "2026-10-23T16:57:56.787Z",
+  "runtimeMs": null,
+  "memoryKb": null,
+  "totalCorrect": null,
+  "totalTestcases": null,
+  "helpType": "PENDING_SELF_REPORT",
+  "helpLabel": "Pending self report",
+  "focusSeconds": null,
+  "syncedAt": "2026-10-23T16:57:58.612Z"
+}

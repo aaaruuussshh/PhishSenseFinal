@@ -1,0 +1,37 @@
+e *left, TreeNode *right) : val(x), left(left), right(right) {}
+ * };
+ */
+class Solution {
+public:
+    int MaxLen=0;
+    void dfs(TreeNode* root, bool isLeft, int depth){
+                if(root==nullptr){
+            return ;
+        }
+       
+        if(isLeft){
+            dfs(root->left,true,1);
+            dfs(root->right,false,depth+1);
+        }
+        else{
+            dfs(root->left,true,depth+1);
+            dfs(root->right,false,1);
+        }
+        MaxLen=max(MaxLen,depth);
+       
+
+        
+
+    }
+    int longestZigZag(TreeNode* root) {
+    if (root == nullptr) return 0;
+   
+    dfs(root->left, true, 1);
+    dfs(root->right, false, 1);
+    return MaxLen;
+    
+
+
+        
+    }
+};
