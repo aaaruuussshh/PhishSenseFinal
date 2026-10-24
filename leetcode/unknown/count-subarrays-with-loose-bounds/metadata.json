@@ -13,8 +13,8 @@
   "memoryKb": null,
   "totalCorrect": null,
   "totalTestcases": null,
-  "helpType": "PENDING_SELF_REPORT",
-  "helpLabel": "Pending self report",
+  "helpType": "HINT",
+  "helpLabel": "Needed hint",
   "focusSeconds": null,
-  "syncedAt": "2026-10-24T14:53:24.091Z"
+  "syncedAt": "2026-10-24T15:04:20.022Z"
 }
