@@ -1,0 +1,23 @@
+r == 0) return 0;
+
+        int digit = number % 10;
+        return digit + digitSum(number / 10);
+    }
+
+    int maximumSum(vector<int>& nums) {
+        unordered_map<int, int> mp;
+        int MaxSum = -1;
+
+        for (int i = 0; i < nums.size(); i++) {
+            int sum = digitSum(nums[i]);
+
+            if (mp.find(sum) != mp.end()) {
+                MaxSum = max(MaxSum, nums[i] + mp[sum]);
+            }
+
+            mp[sum] = max(mp[sum], nums[i]);
+        }
+
+        return MaxSum;
+    }
+};

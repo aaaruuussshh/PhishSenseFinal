@@ -1,0 +1,25 @@
+{
+  "title": "Max Sum of a Pair With Equal Sum of Digits",
+  "titleSlug": "max-sum-of-a-pair-with-equal-sum-of-digits",
+  "frontendQuestionId": "2342",
+  "leetcodeUrl": "https://leetcode.com/problems/max-sum-of-a-pair-with-equal-sum-of-digits/",
+  "difficulty": "Medium",
+  "topics": [
+    "Array",
+    "Hash Table",
+    "Sorting",
+    "Heap (Priority Queue)"
+  ],
+  "language": "Unknown",
+  "verdict": "Accepted",
+  "submissionId": null,
+  "submittedAt": "2026-10-24T06:27:48.505Z",
+  "runtimeMs": null,
+  "memoryKb": null,
+  "totalCorrect": null,
+  "totalTestcases": null,
+  "helpType": "PENDING_SELF_REPORT",
+  "helpLabel": "Pending self report",
+  "focusSeconds": null,
+  "syncedAt": "2026-10-24T06:27:50.735Z"
+}
