@@ -1,0 +1,23 @@
+{
+  "title": "Maximum Number of Words Found in Sentences",
+  "titleSlug": "maximum-number-of-words-found-in-sentences",
+  "frontendQuestionId": "2114",
+  "leetcodeUrl": "https://leetcode.com/problems/maximum-number-of-words-found-in-sentences/",
+  "difficulty": "Easy",
+  "topics": [
+    "Array",
+    "String"
+  ],
+  "language": "Unknown",
+  "verdict": "Accepted",
+  "submissionId": null,
+  "submittedAt": "2026-10-24T06:56:02.642Z",
+  "runtimeMs": null,
+  "memoryKb": null,
+  "totalCorrect": null,
+  "totalTestcases": null,
+  "helpType": "PENDING_SELF_REPORT",
+  "helpLabel": "Pending self report",
+  "focusSeconds": null,
+  "syncedAt": "2026-10-24T06:56:04.531Z"
+}
