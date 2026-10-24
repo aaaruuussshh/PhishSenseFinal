@@ -1,0 +1,1 @@
+<h2><a href="https://leetcode.com/problems/count-magical-substring-pairs-i/">count-magical-substring-pairs-i</a></h2><h3>Unknown</h3><hr>Problem description not found.
