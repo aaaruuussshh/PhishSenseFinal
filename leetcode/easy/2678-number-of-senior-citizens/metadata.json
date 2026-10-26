@@ -1,0 +1,23 @@
+{
+  "title": "Number of Senior Citizens",
+  "titleSlug": "number-of-senior-citizens",
+  "frontendQuestionId": "2678",
+  "leetcodeUrl": "https://leetcode.com/problems/number-of-senior-citizens/",
+  "difficulty": "Easy",
+  "topics": [
+    "Array",
+    "String"
+  ],
+  "language": "Unknown",
+  "verdict": "Accepted",
+  "submissionId": null,
+  "submittedAt": "2026-10-26T17:16:11.058Z",
+  "runtimeMs": null,
+  "memoryKb": null,
+  "totalCorrect": null,
+  "totalTestcases": null,
+  "helpType": "PENDING_SELF_REPORT",
+  "helpLabel": "Pending self report",
+  "focusSeconds": null,
+  "syncedAt": "2026-10-26T17:16:12.901Z"
+}
