@@ -5,14 +5,13 @@ public:
         for(int i=0;i<nums.size();i++){
             mp[nums[i]]++;
         }
-        for(auto x : mp){
+        int ans=0;
+        for(auto x:mp){
             if(x.second>nums.size()/2){
-                return x.first;
+                ans=x.first;
+
             }
-
         }
-        return -1;
-
-        
+        return ans;
     }
 };
