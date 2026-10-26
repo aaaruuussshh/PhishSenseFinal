@@ -1,0 +1,25 @@
+{
+  "title": "First Letter to Appear Twice",
+  "titleSlug": "first-letter-to-appear-twice",
+  "frontendQuestionId": "2351",
+  "leetcodeUrl": "https://leetcode.com/problems/first-letter-to-appear-twice/",
+  "difficulty": "Easy",
+  "topics": [
+    "Hash Table",
+    "String",
+    "Bit Manipulation",
+    "Counting"
+  ],
+  "language": "Unknown",
+  "verdict": "Accepted",
+  "submissionId": null,
+  "submittedAt": "2026-10-26T17:04:28.254Z",
+  "runtimeMs": null,
+  "memoryKb": null,
+  "totalCorrect": null,
+  "totalTestcases": null,
+  "helpType": "PENDING_SELF_REPORT",
+  "helpLabel": "Pending self report",
+  "focusSeconds": null,
+  "syncedAt": "2026-10-26T17:04:30.092Z"
+}
