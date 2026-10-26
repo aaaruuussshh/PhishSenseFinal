@@ -1,0 +1,27 @@
+n;
+        }
+        
+        if(root->val == x){
+            depthX=depth;
+            ParentX=parent;
+        }
+        if(root->val==y){
+            depthY=depth;
+            ParentY=parent;
+        }
+        if(depthX==depthY && ParentX != ParentY){
+            ans=true;
+            
+        }
+
+        dfs(root->left,x,y, depth+1,root);
+        dfs(root->right,x,y,depth+1,root);
+    }
+    bool isCousins(TreeNode* root, int x, int y) {
+        dfs(root, x, y, 0, nullptr);
+
+        return ans;
+    }
+        
+    
+};

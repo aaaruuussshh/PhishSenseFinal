@@ -1,0 +1,25 @@
+{
+  "title": "Cousins in Binary Tree",
+  "titleSlug": "cousins-in-binary-tree",
+  "frontendQuestionId": "993",
+  "leetcodeUrl": "https://leetcode.com/problems/cousins-in-binary-tree/",
+  "difficulty": "Easy",
+  "topics": [
+    "Tree",
+    "Depth-First Search",
+    "Breadth-First Search",
+    "Binary Tree"
+  ],
+  "language": "Unknown",
+  "verdict": "Accepted",
+  "submissionId": null,
+  "submittedAt": "2026-10-26T13:57:27.125Z",
+  "runtimeMs": null,
+  "memoryKb": null,
+  "totalCorrect": null,
+  "totalTestcases": null,
+  "helpType": "PENDING_SELF_REPORT",
+  "helpLabel": "Pending self report",
+  "focusSeconds": null,
+  "syncedAt": "2026-10-26T13:57:28.953Z"
+}
