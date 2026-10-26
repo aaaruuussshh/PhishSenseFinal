@@ -1,0 +1,24 @@
+{
+  "title": "Count Elements With Maximum Frequency",
+  "titleSlug": "count-elements-with-maximum-frequency",
+  "frontendQuestionId": "3005",
+  "leetcodeUrl": "https://leetcode.com/problems/count-elements-with-maximum-frequency/",
+  "difficulty": "Easy",
+  "topics": [
+    "Array",
+    "Hash Table",
+    "Counting"
+  ],
+  "language": "Unknown",
+  "verdict": "Accepted",
+  "submissionId": null,
+  "submittedAt": "2026-10-26T13:24:04.705Z",
+  "runtimeMs": null,
+  "memoryKb": null,
+  "totalCorrect": null,
+  "totalTestcases": null,
+  "helpType": "PENDING_SELF_REPORT",
+  "helpLabel": "Pending self report",
+  "focusSeconds": null,
+  "syncedAt": "2026-10-26T13:24:06.569Z"
+}
