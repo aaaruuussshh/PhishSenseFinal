@@ -1,29 +1,36 @@
-lptr), right(nullptr) {}
- *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
- * };
- */
-class Solution {
+{
 public:
-    bool solve(TreeNode* root){
-        if(root==nullptr){
+    bool dfs(TreeNode* root){
+                if(root==nullptr){
             return false;
         }
-        if(root->left == nullptr && root->right == nullptr) {
-    return root->val == 1;
-}
-        bool left= solve(root->left);
-        bool right=solve(root->right);
-        if(root->val==3){
+        bool left = dfs(root->left);
+        bool right=dfs(root->right);
+        if(root->left == nullptr && root->right==nullptr){
+            if(root->val==0){
+                return false;
+            }
+            else{
+                return true;
+            }
+
+        }
+        if(root->val==2){
+            return left || right;
+        }
+        else{
             return left && right;
 
         }
-        else{
-            return left || right;
-        }
+        return false;
+
+        
+
     }
     bool evaluateTree(TreeNode* root) {
-        return solve(root);
-        
+        return dfs(root);
+
+
         
     }
 };
