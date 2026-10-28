@@ -1,0 +1,24 @@
+{
+  "title": "Count the Number of Good Subarrays",
+  "titleSlug": "count-the-number-of-good-subarrays",
+  "frontendQuestionId": "2537",
+  "leetcodeUrl": "https://leetcode.com/problems/count-the-number-of-good-subarrays/",
+  "difficulty": "Medium",
+  "topics": [
+    "Array",
+    "Hash Table",
+    "Sliding Window"
+  ],
+  "language": "Unknown",
+  "verdict": "Accepted",
+  "submissionId": null,
+  "submittedAt": "2026-10-28T07:47:07.199Z",
+  "runtimeMs": null,
+  "memoryKb": null,
+  "totalCorrect": null,
+  "totalTestcases": null,
+  "helpType": "PENDING_SELF_REPORT",
+  "helpLabel": "Pending self report",
+  "focusSeconds": null,
+  "syncedAt": "2026-10-28T07:47:09.570Z"
+}
