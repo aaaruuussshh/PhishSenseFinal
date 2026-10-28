@@ -1,0 +1,24 @@
+{
+  "title": "Rotate Image",
+  "titleSlug": "rotate-image",
+  "frontendQuestionId": "48",
+  "leetcodeUrl": "https://leetcode.com/problems/rotate-image/",
+  "difficulty": "Medium",
+  "topics": [
+    "Array",
+    "Math",
+    "Matrix"
+  ],
+  "language": "Unknown",
+  "verdict": "Accepted",
+  "submissionId": null,
+  "submittedAt": "2026-10-28T18:43:37.715Z",
+  "runtimeMs": null,
+  "memoryKb": null,
+  "totalCorrect": null,
+  "totalTestcases": null,
+  "helpType": "PENDING_SELF_REPORT",
+  "helpLabel": "Pending self report",
+  "focusSeconds": null,
+  "syncedAt": "2026-10-28T18:43:39.769Z"
+}
