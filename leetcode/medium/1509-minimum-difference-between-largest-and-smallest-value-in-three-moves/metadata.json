@@ -1,0 +1,24 @@
+{
+  "title": "Minimum Difference Between Largest and Smallest Value in Three Moves",
+  "titleSlug": "minimum-difference-between-largest-and-smallest-value-in-three-moves",
+  "frontendQuestionId": "1509",
+  "leetcodeUrl": "https://leetcode.com/problems/minimum-difference-between-largest-and-smallest-value-in-three-moves/",
+  "difficulty": "Medium",
+  "topics": [
+    "Array",
+    "Greedy",
+    "Sorting"
+  ],
+  "language": "Unknown",
+  "verdict": "Accepted",
+  "submissionId": null,
+  "submittedAt": "2026-10-28T16:36:28.644Z",
+  "runtimeMs": null,
+  "memoryKb": null,
+  "totalCorrect": null,
+  "totalTestcases": null,
+  "helpType": "PENDING_SELF_REPORT",
+  "helpLabel": "Pending self report",
+  "focusSeconds": null,
+  "syncedAt": "2026-10-28T16:36:30.568Z"
+}
