@@ -1,0 +1,24 @@
+{
+  "title": "Contiguous Array",
+  "titleSlug": "contiguous-array",
+  "frontendQuestionId": "525",
+  "leetcodeUrl": "https://leetcode.com/problems/contiguous-array/",
+  "difficulty": "Medium",
+  "topics": [
+    "Array",
+    "Hash Table",
+    "Prefix Sum"
+  ],
+  "language": "Unknown",
+  "verdict": "Accepted",
+  "submissionId": null,
+  "submittedAt": "2026-10-28T16:59:56.199Z",
+  "runtimeMs": null,
+  "memoryKb": null,
+  "totalCorrect": null,
+  "totalTestcases": null,
+  "helpType": "PENDING_SELF_REPORT",
+  "helpLabel": "Pending self report",
+  "focusSeconds": null,
+  "syncedAt": "2026-10-28T16:59:59.078Z"
+}
