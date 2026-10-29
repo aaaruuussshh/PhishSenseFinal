@@ -1,0 +1,27 @@
+{
+  "title": "Find the Duplicate Number",
+  "titleSlug": "find-the-duplicate-number",
+  "frontendQuestionId": "287",
+  "leetcodeUrl": "https://leetcode.com/problems/find-the-duplicate-number/",
+  "difficulty": "Medium",
+  "topics": [
+    "Array",
+    "Two Pointers",
+    "Binary Search",
+    "Bit Manipulation",
+    "Pigeonhole Principle",
+    "Floyd's Cycle Finding Algorithm"
+  ],
+  "language": "Unknown",
+  "verdict": "Accepted",
+  "submissionId": null,
+  "submittedAt": "2026-10-29T08:57:53.283Z",
+  "runtimeMs": null,
+  "memoryKb": null,
+  "totalCorrect": null,
+  "totalTestcases": null,
+  "helpType": "PENDING_SELF_REPORT",
+  "helpLabel": "Pending self report",
+  "focusSeconds": null,
+  "syncedAt": "2026-10-29T08:57:55.174Z"
+}
