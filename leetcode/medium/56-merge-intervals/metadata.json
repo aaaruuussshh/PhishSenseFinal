@@ -1,0 +1,24 @@
+{
+  "title": "Merge Intervals",
+  "titleSlug": "merge-intervals",
+  "frontendQuestionId": "56",
+  "leetcodeUrl": "https://leetcode.com/problems/merge-intervals/",
+  "difficulty": "Medium",
+  "topics": [
+    "Array",
+    "Sorting",
+    "Quicksort"
+  ],
+  "language": "Unknown",
+  "verdict": "Accepted",
+  "submissionId": null,
+  "submittedAt": "2026-10-31T14:55:30.552Z",
+  "runtimeMs": null,
+  "memoryKb": null,
+  "totalCorrect": null,
+  "totalTestcases": null,
+  "helpType": "PENDING_SELF_REPORT",
+  "helpLabel": "Pending self report",
+  "focusSeconds": null,
+  "syncedAt": "2026-10-31T14:55:32.437Z"
+}
