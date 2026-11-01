@@ -1,0 +1,25 @@
+{
+  "title": "Minimum Common Value",
+  "titleSlug": "minimum-common-value",
+  "frontendQuestionId": "2540",
+  "leetcodeUrl": "https://leetcode.com/problems/minimum-common-value/",
+  "difficulty": "Easy",
+  "topics": [
+    "Array",
+    "Hash Table",
+    "Two Pointers",
+    "Binary Search"
+  ],
+  "language": "Unknown",
+  "verdict": "Accepted",
+  "submissionId": null,
+  "submittedAt": "2026-11-01T13:10:24.963Z",
+  "runtimeMs": null,
+  "memoryKb": null,
+  "totalCorrect": null,
+  "totalTestcases": null,
+  "helpType": "PENDING_SELF_REPORT",
+  "helpLabel": "Pending self report",
+  "focusSeconds": null,
+  "syncedAt": "2026-11-01T13:10:26.903Z"
+}
