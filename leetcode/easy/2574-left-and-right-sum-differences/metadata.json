@@ -1,0 +1,23 @@
+{
+  "title": "Left and Right Sum Differences",
+  "titleSlug": "left-and-right-sum-differences",
+  "frontendQuestionId": "2574",
+  "leetcodeUrl": "https://leetcode.com/problems/left-and-right-sum-differences/",
+  "difficulty": "Easy",
+  "topics": [
+    "Array",
+    "Prefix Sum"
+  ],
+  "language": "Unknown",
+  "verdict": "Accepted",
+  "submissionId": null,
+  "submittedAt": "2026-11-01T14:00:32.586Z",
+  "runtimeMs": null,
+  "memoryKb": null,
+  "totalCorrect": null,
+  "totalTestcases": null,
+  "helpType": "PENDING_SELF_REPORT",
+  "helpLabel": "Pending self report",
+  "focusSeconds": null,
+  "syncedAt": "2026-11-01T14:00:34.460Z"
+}
