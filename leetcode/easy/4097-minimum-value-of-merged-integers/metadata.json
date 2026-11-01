@@ -1,0 +1,20 @@
+{
+  "title": "Minimum Value of Merged Integers",
+  "titleSlug": "minimum-value-of-merged-integers",
+  "frontendQuestionId": "4097",
+  "leetcodeUrl": "https://leetcode.com/problems/minimum-value-of-merged-integers/",
+  "difficulty": "Easy",
+  "topics": [],
+  "language": "Unknown",
+  "verdict": "Accepted",
+  "submissionId": null,
+  "submittedAt": "2026-11-01T12:26:01.621Z",
+  "runtimeMs": null,
+  "memoryKb": null,
+  "totalCorrect": null,
+  "totalTestcases": null,
+  "helpType": "NONE",
+  "helpLabel": "Solved solo",
+  "focusSeconds": null,
+  "syncedAt": "2026-11-01T12:26:54.231Z"
+}
