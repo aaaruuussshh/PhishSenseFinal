@@ -1,0 +1,23 @@
+      mp[word[i]]--;
+            int freq=-1;
+            bool valid=true;
+            for(auto x : mp){
+                if(x.second==0)continue;
+                if(freq==-1){
+                    freq=x.second;
+                }
+                else if(x.second !=freq){
+                    valid=false;
+                    break;
+                }
+            }
+            mp[word[i]]++;
+            if(valid){
+                return true;
+            }
+            
+
+        }
+        return false;
+    }
+};

@@ -1,0 +1,24 @@
+{
+  "title": "Remove Letter To Equalize Frequency",
+  "titleSlug": "remove-letter-to-equalize-frequency",
+  "frontendQuestionId": "2423",
+  "leetcodeUrl": "https://leetcode.com/problems/remove-letter-to-equalize-frequency/",
+  "difficulty": "Easy",
+  "topics": [
+    "Hash Table",
+    "String",
+    "Counting"
+  ],
+  "language": "Unknown",
+  "verdict": "Accepted",
+  "submissionId": null,
+  "submittedAt": "2026-11-01T13:28:24.188Z",
+  "runtimeMs": null,
+  "memoryKb": null,
+  "totalCorrect": null,
+  "totalTestcases": null,
+  "helpType": "PENDING_SELF_REPORT",
+  "helpLabel": "Pending self report",
+  "focusSeconds": null,
+  "syncedAt": "2026-11-01T13:28:26.141Z"
+}
