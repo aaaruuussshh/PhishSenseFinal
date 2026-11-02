@@ -1,0 +1,24 @@
+{
+  "title": "Partition Array According to Given Pivot",
+  "titleSlug": "partition-array-according-to-given-pivot",
+  "frontendQuestionId": "2161",
+  "leetcodeUrl": "https://leetcode.com/problems/partition-array-according-to-given-pivot/",
+  "difficulty": "Medium",
+  "topics": [
+    "Array",
+    "Two Pointers",
+    "Simulation"
+  ],
+  "language": "Unknown",
+  "verdict": "Accepted",
+  "submissionId": null,
+  "submittedAt": "2026-11-02T06:57:15.092Z",
+  "runtimeMs": null,
+  "memoryKb": null,
+  "totalCorrect": null,
+  "totalTestcases": null,
+  "helpType": "PENDING_SELF_REPORT",
+  "helpLabel": "Pending self report",
+  "focusSeconds": null,
+  "syncedAt": "2026-11-02T06:57:16.930Z"
+}
