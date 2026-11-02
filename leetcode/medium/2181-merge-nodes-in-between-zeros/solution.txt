@@ -1,0 +1,23 @@
+ead) {
+        ListNode*temp=head;
+        ListNode* ans = new ListNode(0);
+        ListNode* curr = ans;
+        
+        while(temp !=NULL){
+            int sum=0;
+              while(temp != NULL && temp->val != 0) {
+                sum += temp->val;
+                temp = temp->next;
+            }
+            if(temp!=NULL){
+                curr->next=new ListNode(sum);
+                curr=curr->next;
+                temp=temp->next;
+            }
+
+
+
+        }
+        return ans->next->next;        
+    }
+};
