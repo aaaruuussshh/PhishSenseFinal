@@ -1,0 +1,25 @@
+{
+  "title": "Divide Array Into Equal Pairs",
+  "titleSlug": "divide-array-into-equal-pairs",
+  "frontendQuestionId": "2206",
+  "leetcodeUrl": "https://leetcode.com/problems/divide-array-into-equal-pairs/",
+  "difficulty": "Easy",
+  "topics": [
+    "Array",
+    "Hash Table",
+    "Bit Manipulation",
+    "Counting"
+  ],
+  "language": "Unknown",
+  "verdict": "Accepted",
+  "submissionId": null,
+  "submittedAt": "2026-11-02T06:29:09.965Z",
+  "runtimeMs": null,
+  "memoryKb": null,
+  "totalCorrect": null,
+  "totalTestcases": null,
+  "helpType": "PENDING_SELF_REPORT",
+  "helpLabel": "Pending self report",
+  "focusSeconds": null,
+  "syncedAt": "2026-11-02T06:29:12.246Z"
+}
