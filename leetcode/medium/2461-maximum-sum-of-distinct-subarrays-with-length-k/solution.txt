@@ -1,0 +1,29 @@
+ms[right];
+
+        }
+                    if(mp.size()==k){
+                MaxSum=max(MaxSum,sum);
+                
+            }
+
+        for( int right=k;right<nums.size();++right){
+
+            mp[nums[right]]++;
+sum += nums[right];
+            sum-=nums[left];
+            mp[nums[left]]--;
+            if(mp[nums[left]] == 0){
+    mp.erase(nums[left]);
+}
+            left++;
+
+                        if(mp.size()==k){
+                MaxSum=max(MaxSum,sum);
+                
+            }
+
+        }
+        return MaxSum;
+
+    }
+};
