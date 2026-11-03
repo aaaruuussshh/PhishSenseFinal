@@ -1,0 +1,39 @@
+  st.insert(descriptions[i][1]);
+        }
+        int rootVal=-1;
+        for(int i=0;i<descriptions.size();i++){
+            if(!st.contains(descriptions[i][0])){
+                rootVal=descriptions[i][0];
+                break;
+            }
+        }
+        
+        unordered_map<int, TreeNode*> mp;
+        for(int i=0;i<descriptions.size();i++){
+            int parent = descriptions[i][0];
+            int child = descriptions[i][1];
+            int isLeft = descriptions[i][2];
+           
+            if(mp.find(parent)==mp.end()){
+                mp[parent] = new TreeNode(parent);
+            }
+             if(mp.find(child)==mp.end()){
+                 mp[child] = new TreeNode(child);
+
+            }
+            if(isLeft==1){
+                 mp[parent]->left = mp[child];
+
+            }
+            else{
+               mp[parent]->right = mp[child];
+            }
+
+            }
+
+        
+        return mp[rootVal];
+        
+        
+    }
+};

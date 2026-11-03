@@ -1,0 +1,25 @@
+{
+  "title": "Create Binary Tree From Descriptions",
+  "titleSlug": "create-binary-tree-from-descriptions",
+  "frontendQuestionId": "2196",
+  "leetcodeUrl": "https://leetcode.com/problems/create-binary-tree-from-descriptions/",
+  "difficulty": "Medium",
+  "topics": [
+    "Array",
+    "Hash Table",
+    "Tree",
+    "Binary Tree"
+  ],
+  "language": "Unknown",
+  "verdict": "Accepted",
+  "submissionId": null,
+  "submittedAt": "2026-11-03T12:52:09.478Z",
+  "runtimeMs": null,
+  "memoryKb": null,
+  "totalCorrect": null,
+  "totalTestcases": null,
+  "helpType": "PENDING_SELF_REPORT",
+  "helpLabel": "Pending self report",
+  "focusSeconds": null,
+  "syncedAt": "2026-11-03T12:52:12.091Z"
+}
