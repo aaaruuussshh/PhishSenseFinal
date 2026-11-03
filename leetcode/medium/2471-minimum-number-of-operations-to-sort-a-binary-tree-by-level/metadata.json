@@ -1,0 +1,24 @@
+{
+  "title": "Minimum Number of Operations to Sort a Binary Tree by Level",
+  "titleSlug": "minimum-number-of-operations-to-sort-a-binary-tree-by-level",
+  "frontendQuestionId": "2471",
+  "leetcodeUrl": "https://leetcode.com/problems/minimum-number-of-operations-to-sort-a-binary-tree-by-level/",
+  "difficulty": "Medium",
+  "topics": [
+    "Tree",
+    "Breadth-First Search",
+    "Binary Tree"
+  ],
+  "language": "Unknown",
+  "verdict": "Accepted",
+  "submissionId": null,
+  "submittedAt": "2026-11-03T13:24:05.310Z",
+  "runtimeMs": null,
+  "memoryKb": null,
+  "totalCorrect": null,
+  "totalTestcases": null,
+  "helpType": "PENDING_SELF_REPORT",
+  "helpLabel": "Pending self report",
+  "focusSeconds": null,
+  "syncedAt": "2026-11-03T13:24:07.443Z"
+}

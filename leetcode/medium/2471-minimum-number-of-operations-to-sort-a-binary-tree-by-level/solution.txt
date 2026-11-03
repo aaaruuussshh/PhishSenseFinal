@@ -1,0 +1,33 @@
+    if(temp->right){
+                    q.push(temp->right);
+                }
+
+            }
+            
+
+vector<int> sorted = level;
+sort(sorted.begin(), sorted.end());
+
+for (int i = 0; i < level.size(); i++) {
+
+    if (level[i] != sorted[i]) {
+
+        for (int j = i + 1; j < level.size(); j++) {
+
+            if (level[j] == sorted[i]) {
+                swap(level[i], level[j]);
+                swaps++;
+                break;
+            }
+        }
+    }
+}
+
+
+        }
+        return swaps;
+        
+        
+        
+    }
+};
