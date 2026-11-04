@@ -1,35 +1,33 @@
 class Solution {
 public:
     int minOperations(vector<int>& nums, int x) {
-        int fullSum=0;
+        int totalsum=0;
         for(int i=0;i<nums.size();i++){
-            fullSum+=nums[i];
+            totalsum+=nums[i];
 
-        }
-        int SumReqd = fullSum-x;
+        }    
+        int target=totalsum-x;
+        if (target == 0) return nums.size();
+        if (target < 0) return -1;
+        int currSum=0;
         int left=0;
-        int TempSum=0;
-        int MaxSize=-1;
-        int right;
-        if(SumReqd < 0) return -1;
-        for(right=0;right<nums.size();right++){
-            TempSum+=nums[right];
+        int MaxLen=0;
+        for(int right=0;right<nums.size();right++){
+            currSum+=nums[right];
 
-            while(TempSum>SumReqd){
-                TempSum-=nums[left];
+            while(currSum>target){
+                currSum-=nums[left];
                 left++;
             }
-                        if(TempSum==SumReqd){
-                MaxSize = max(MaxSize,right-left+1);
-                
+                                    if(currSum==target){
+                MaxLen=max(MaxLen,right-left+1);
+
             }
+
         }
-        if(MaxSize==-1){
+        if(MaxLen==0){
             return -1;
         }
-
-
-        return nums.size()-MaxSize;
-        
+        return nums.size()-MaxLen;
     }
 };
