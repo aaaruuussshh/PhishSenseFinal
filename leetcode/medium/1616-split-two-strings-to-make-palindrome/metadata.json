@@ -1,0 +1,23 @@
+{
+  "title": "Split Two Strings to Make Palindrome",
+  "titleSlug": "split-two-strings-to-make-palindrome",
+  "frontendQuestionId": "1616",
+  "leetcodeUrl": "https://leetcode.com/problems/split-two-strings-to-make-palindrome/",
+  "difficulty": "Medium",
+  "topics": [
+    "Two Pointers",
+    "String"
+  ],
+  "language": "Unknown",
+  "verdict": "Accepted",
+  "submissionId": null,
+  "submittedAt": "2026-11-04T15:27:40.285Z",
+  "runtimeMs": null,
+  "memoryKb": null,
+  "totalCorrect": null,
+  "totalTestcases": null,
+  "helpType": "PENDING_SELF_REPORT",
+  "helpLabel": "Pending self report",
+  "focusSeconds": null,
+  "syncedAt": "2026-11-04T15:27:42.260Z"
+}

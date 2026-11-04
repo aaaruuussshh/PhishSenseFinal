@@ -1,0 +1,22 @@
+     for (int i = 0; i < s.size() / 2; i++) {
+            if (s[i] != s[s.size() - i - 1]) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    bool check(string& a, string& b) {
+        int left = 0;
+        int right = a.size() - 1;
+        while (left < right && a[left] == b[right]) {
+            left++;
+            right--;
+        }
+        return checkPal(a.substr(left, right - left + 1)) ||
+               checkPal(b.substr(left, right - left + 1));
+    }
+    bool checkPalindromeFormation(string a, string b) {
+        return check(a, b) || check(b, a);
+    }
+};
