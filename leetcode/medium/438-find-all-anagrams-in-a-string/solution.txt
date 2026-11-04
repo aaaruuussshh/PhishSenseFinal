@@ -1,0 +1,30 @@
+++){
+            window[s[i]]++;
+        }
+        
+        while(right<s.size()){
+            window[s[right]]++;
+            bool flag = true;
+            for(auto x : freqP){
+                if(x.second!=window[x.first]){
+                    flag=false;
+                    break;
+
+
+                }
+           
+            }
+            
+                if(flag){
+                ans.push_back(left);
+            }
+                     window[s[left]]--;
+            left++;
+            right++;
+
+            
+        }
+        return ans;
+        
+    }
+};
