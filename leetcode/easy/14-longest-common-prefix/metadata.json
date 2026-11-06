@@ -1,0 +1,24 @@
+{
+  "title": "Longest Common Prefix",
+  "titleSlug": "longest-common-prefix",
+  "frontendQuestionId": "14",
+  "leetcodeUrl": "https://leetcode.com/problems/longest-common-prefix/",
+  "difficulty": "Easy",
+  "topics": [
+    "Array",
+    "String",
+    "Trie"
+  ],
+  "language": "Unknown",
+  "verdict": "Accepted",
+  "submissionId": null,
+  "submittedAt": "2026-11-06T13:50:16.922Z",
+  "runtimeMs": null,
+  "memoryKb": null,
+  "totalCorrect": null,
+  "totalTestcases": null,
+  "helpType": "PENDING_SELF_REPORT",
+  "helpLabel": "Pending self report",
+  "focusSeconds": null,
+  "syncedAt": "2026-11-06T13:50:18.959Z"
+}
