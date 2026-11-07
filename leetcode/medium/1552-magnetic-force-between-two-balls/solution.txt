@@ -1,0 +1,24 @@
+class Solution {
+public:
+    bool canPlace(vector<int>& position, int m, int mid) {
+        int count = 1;
+        int lastPlaced = position[0];
+        for (int i = 1; i < position.size(); i++) {
+            if (position[i] - lastPlaced >= mid) {
+                count++;
+                lastPlaced = position[i];
+    }
+        }
+        return count >= m;
+    }
+
+    int maxDistance(vector<int>& position, int m) {
+        sort(position.begin(), position.end());
+
+        int left = 1;
+        int right = position.back() - position[0];
+        int ans = 0;
+
+        while (left <= right) {
+            int mid = left + (right - left) / 2;
+  
