@@ -1,0 +1,1 @@
+<h2><a href="https://leetcode.com/problems/remove-elements-by-type-and-color/">remove-elements-by-type-and-color</a></h2><h3>Unknown</h3><hr>Problem description not found.
