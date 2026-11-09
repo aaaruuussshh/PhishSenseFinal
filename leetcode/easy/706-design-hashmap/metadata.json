@@ -1,0 +1,26 @@
+{
+  "title": "Design HashMap",
+  "titleSlug": "design-hashmap",
+  "frontendQuestionId": "706",
+  "leetcodeUrl": "https://leetcode.com/problems/design-hashmap/",
+  "difficulty": "Easy",
+  "topics": [
+    "Array",
+    "Hash Table",
+    "Linked List",
+    "Design",
+    "Hash Function"
+  ],
+  "language": "Unknown",
+  "verdict": "Accepted",
+  "submissionId": null,
+  "submittedAt": "2026-11-09T07:14:21.485Z",
+  "runtimeMs": null,
+  "memoryKb": null,
+  "totalCorrect": null,
+  "totalTestcases": null,
+  "helpType": "PENDING_SELF_REPORT",
+  "helpLabel": "Pending self report",
+  "focusSeconds": null,
+  "syncedAt": "2026-11-09T07:14:23.537Z"
+}
