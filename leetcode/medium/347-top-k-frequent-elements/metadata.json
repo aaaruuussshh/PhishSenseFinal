@@ -1,0 +1,29 @@
+{
+  "title": "Top K Frequent Elements",
+  "titleSlug": "top-k-frequent-elements",
+  "frontendQuestionId": "347",
+  "leetcodeUrl": "https://leetcode.com/problems/top-k-frequent-elements/",
+  "difficulty": "Medium",
+  "topics": [
+    "Array",
+    "Hash Table",
+    "Divide and Conquer",
+    "Sorting",
+    "Heap (Priority Queue)",
+    "Bucket Sort",
+    "Counting",
+    "Quickselect"
+  ],
+  "language": "Unknown",
+  "verdict": "Accepted",
+  "submissionId": null,
+  "submittedAt": "2026-11-10T18:02:28.453Z",
+  "runtimeMs": null,
+  "memoryKb": null,
+  "totalCorrect": null,
+  "totalTestcases": null,
+  "helpType": "PENDING_SELF_REPORT",
+  "helpLabel": "Pending self report",
+  "focusSeconds": null,
+  "syncedAt": "2026-11-10T18:02:30.304Z"
+}
