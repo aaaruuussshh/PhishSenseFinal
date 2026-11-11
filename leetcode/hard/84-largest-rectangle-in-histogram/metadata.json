@@ -1,0 +1,25 @@
+{
+  "title": "Largest Rectangle in Histogram",
+  "titleSlug": "largest-rectangle-in-histogram",
+  "frontendQuestionId": "84",
+  "leetcodeUrl": "https://leetcode.com/problems/largest-rectangle-in-histogram/",
+  "difficulty": "Hard",
+  "topics": [
+    "Array",
+    "Stack",
+    "Monotonic Stack",
+    "Range Minimum/Maximum Query"
+  ],
+  "language": "Unknown",
+  "verdict": "Accepted",
+  "submissionId": null,
+  "submittedAt": "2026-11-11T17:00:08.196Z",
+  "runtimeMs": null,
+  "memoryKb": null,
+  "totalCorrect": null,
+  "totalTestcases": null,
+  "helpType": "PENDING_SELF_REPORT",
+  "helpLabel": "Pending self report",
+  "focusSeconds": null,
+  "syncedAt": "2026-11-11T17:00:10.059Z"
+}
