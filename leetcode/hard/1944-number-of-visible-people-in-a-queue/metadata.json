@@ -1,0 +1,24 @@
+{
+  "title": "Number of Visible People in a Queue",
+  "titleSlug": "number-of-visible-people-in-a-queue",
+  "frontendQuestionId": "1944",
+  "leetcodeUrl": "https://leetcode.com/problems/number-of-visible-people-in-a-queue/",
+  "difficulty": "Hard",
+  "topics": [
+    "Array",
+    "Stack",
+    "Monotonic Stack"
+  ],
+  "language": "Unknown",
+  "verdict": "Accepted",
+  "submissionId": null,
+  "submittedAt": "2026-11-12T18:18:57.881Z",
+  "runtimeMs": null,
+  "memoryKb": null,
+  "totalCorrect": null,
+  "totalTestcases": null,
+  "helpType": "PENDING_SELF_REPORT",
+  "helpLabel": "Pending self report",
+  "focusSeconds": null,
+  "syncedAt": "2026-11-12T18:18:59.713Z"
+}
