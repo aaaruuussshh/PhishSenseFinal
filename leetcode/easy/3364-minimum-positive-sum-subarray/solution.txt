@@ -1,0 +1,25 @@
+e();i++){
+            prefix+=nums[i];
+            prefixSum.push_back(prefix);
+
+         }
+      
+        for(int i=0;i<prefixSum.size();i++){
+            int sum=0;
+           
+            for(int j=i+1;j<prefixSum.size();j++){
+                sum=prefixSum[j]-prefixSum[i];
+                if((j-i)>=l && (j-i)<=r && sum>0){
+                    MinSum=min(MinSum,sum);
+                    
+                }
+
+
+            }
+        }
+       if (MinSum == INT_MAX) {
+    return -1;
+}
+return MinSum;
+    }
+};
