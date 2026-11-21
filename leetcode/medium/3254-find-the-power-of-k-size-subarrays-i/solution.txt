@@ -1,0 +1,36 @@
+lution {
+public:
+    vector<int> resultsArray(vector<int>& nums, int k) {
+        int left=0;
+        vector<int>result;
+        int right=k-1;
+        
+
+        while(right<nums.size()){
+            bool isValid=true;
+
+            for(int i=left+1;i<=right;i++){
+                if(nums[i] != nums[i-1]+1){
+                    
+                    isValid=false;
+                    break;
+                }
+            }
+                if(isValid){
+                    result.push_back(nums[right]);
+                }
+                else{
+                    result.push_back(-1);
+                }
+               
+
+
+            
+            right++;
+            left++;
+        }
+        return result;
+       
+        
+    }
+};

@@ -1,0 +1,23 @@
+{
+  "title": "Find the Power of K-Size Subarrays I",
+  "titleSlug": "find-the-power-of-k-size-subarrays-i",
+  "frontendQuestionId": "3254",
+  "leetcodeUrl": "https://leetcode.com/problems/find-the-power-of-k-size-subarrays-i/",
+  "difficulty": "Medium",
+  "topics": [
+    "Array",
+    "Sliding Window"
+  ],
+  "language": "Unknown",
+  "verdict": "Accepted",
+  "submissionId": null,
+  "submittedAt": "2026-11-21T13:43:57.258Z",
+  "runtimeMs": null,
+  "memoryKb": null,
+  "totalCorrect": null,
+  "totalTestcases": null,
+  "helpType": "PENDING_SELF_REPORT",
+  "helpLabel": "Pending self report",
+  "focusSeconds": null,
+  "syncedAt": "2026-11-21T13:43:59.149Z"
+}
