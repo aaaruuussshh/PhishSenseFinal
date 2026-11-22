@@ -1,0 +1,43 @@
+class Solution {
+public:
+    bool checkString(string s) {
+    int i=0;
+    if(s.size()==1){
+        return true;
+    }
+    int Acount=0;
+    int k=0;
+    int b=0;
+    int Bcount=0;
+    while(s[k] == 'a'){
+        Acount++;
+        
+        k++;
+    }
+    while(s[b] == 'b'){
+        Bcount++;
+        
+        b++;
+    }
+        if(Bcount==s.size()){
+        return true;
+    }
+
+    if(Acount==s.size()){
+        return true;
+    }
+    
+        while(s[i] != 'b'){
+            i++;
+        }
+        for(int j=i;j<s.size();j++){
+            if(s[j] == 'a'){
+                return false;
+            }
+        }
+        return true;
+        
+     
+        
+    }
+};
