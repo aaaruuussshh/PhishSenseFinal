@@ -1,0 +1,24 @@
+{
+  "title": "Insert into a Binary Search Tree",
+  "titleSlug": "insert-into-a-binary-search-tree",
+  "frontendQuestionId": "701",
+  "leetcodeUrl": "https://leetcode.com/problems/insert-into-a-binary-search-tree/",
+  "difficulty": "Medium",
+  "topics": [
+    "Tree",
+    "Binary Search Tree",
+    "Binary Tree"
+  ],
+  "language": "Unknown",
+  "verdict": "Accepted",
+  "submissionId": null,
+  "submittedAt": "2026-11-22T07:05:07.214Z",
+  "runtimeMs": null,
+  "memoryKb": null,
+  "totalCorrect": null,
+  "totalTestcases": null,
+  "helpType": "PENDING_SELF_REPORT",
+  "helpLabel": "Pending self report",
+  "focusSeconds": null,
+  "syncedAt": "2026-11-22T07:05:09.071Z"
+}
