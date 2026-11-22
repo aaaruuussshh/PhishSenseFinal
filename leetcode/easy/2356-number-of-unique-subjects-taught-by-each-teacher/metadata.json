@@ -1,0 +1,22 @@
+{
+  "title": "Number of Unique Subjects Taught by Each Teacher",
+  "titleSlug": "number-of-unique-subjects-taught-by-each-teacher",
+  "frontendQuestionId": "2356",
+  "leetcodeUrl": "https://leetcode.com/problems/number-of-unique-subjects-taught-by-each-teacher/",
+  "difficulty": "Easy",
+  "topics": [
+    "Database"
+  ],
+  "language": "Unknown",
+  "verdict": "Accepted",
+  "submissionId": null,
+  "submittedAt": "2026-11-22T11:31:54.051Z",
+  "runtimeMs": null,
+  "memoryKb": null,
+  "totalCorrect": null,
+  "totalTestcases": null,
+  "helpType": "PENDING_SELF_REPORT",
+  "helpLabel": "Pending self report",
+  "focusSeconds": null,
+  "syncedAt": "2026-11-22T11:31:55.886Z"
+}
