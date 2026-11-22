@@ -1,0 +1,22 @@
+{
+  "title": "Find Total Time Spent by Each Employee",
+  "titleSlug": "find-total-time-spent-by-each-employee",
+  "frontendQuestionId": "1741",
+  "leetcodeUrl": "https://leetcode.com/problems/find-total-time-spent-by-each-employee/",
+  "difficulty": "Easy",
+  "topics": [
+    "Database"
+  ],
+  "language": "Unknown",
+  "verdict": "Accepted",
+  "submissionId": null,
+  "submittedAt": "2026-11-22T16:31:10.066Z",
+  "runtimeMs": null,
+  "memoryKb": null,
+  "totalCorrect": null,
+  "totalTestcases": null,
+  "helpType": "PENDING_SELF_REPORT",
+  "helpLabel": "Pending self report",
+  "focusSeconds": null,
+  "syncedAt": "2026-11-22T16:31:13.355Z"
+}
