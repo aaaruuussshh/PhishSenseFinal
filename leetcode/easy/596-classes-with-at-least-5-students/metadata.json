@@ -1,0 +1,22 @@
+{
+  "title": "Classes With at Least 5 Students",
+  "titleSlug": "classes-with-at-least-5-students",
+  "frontendQuestionId": "596",
+  "leetcodeUrl": "https://leetcode.com/problems/classes-with-at-least-5-students/",
+  "difficulty": "Easy",
+  "topics": [
+    "Database"
+  ],
+  "language": "Unknown",
+  "verdict": "Accepted",
+  "submissionId": null,
+  "submittedAt": "2026-11-22T16:25:46.700Z",
+  "runtimeMs": null,
+  "memoryKb": null,
+  "totalCorrect": null,
+  "totalTestcases": null,
+  "helpType": "PENDING_SELF_REPORT",
+  "helpLabel": "Pending self report",
+  "focusSeconds": null,
+  "syncedAt": "2026-11-22T16:25:48.468Z"
+}
