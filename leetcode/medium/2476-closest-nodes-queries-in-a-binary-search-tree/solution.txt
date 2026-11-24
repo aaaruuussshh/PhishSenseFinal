@@ -1,0 +1,50 @@
+void solve(TreeNode* root, vector<int>& fullTree){
+    if(root == nullptr){
+        return;
+    }
+    solve(root->left, fullTree);
+    fullTree.push_back(root->val);
+    solve(root->right, fullTree);
+}
+    vector<vector<int>> closestNodes(TreeNode* root, vector<int>& queries) {
+       vector<int> fullTree;
+solve(root, fullTree);
+vector<vector<int>> result;
+       
+
+   
+for(int i=0;i<queries.size();i++){
+    int low=0;
+int high = fullTree.size()-1;
+     int Max=-1;
+    int Min=-1;
+
+
+
+while(high>=low){
+    int mid = low+(high-low)/2;
+    if(fullTree[mid] >queries[i]){
+        Max=fullTree[mid];
+        high=mid-1;
+
+    }
+    if(fullTree[mid] < queries[i]){
+    Min = fullTree[mid];
+    low = mid + 1;
+}
+if(fullTree[mid] == queries[i]){
+    Min = Max = fullTree[mid];
+    break;
+}
+
+}
+result.push_back({Min, Max});
+}
+
+        return result;
+
+
+
+        
+    }
+};
