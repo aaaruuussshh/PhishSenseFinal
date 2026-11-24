@@ -1,0 +1,27 @@
+r<int>& nums) {
+        int maxLen = 0;
+        int n = nums.size();
+        
+        for (int i = 0; i < n; i++) {
+            long long prod = 1;
+            int g = 0;
+            int l = 1;
+            
+            for (int j = i; j < n; j++) {
+                prod *= nums[j];
+                g = gcd(g, nums[j]);
+                l = lcm(l, nums[j]);
+                
+                if (prod == (long long)l * g) {
+                    maxLen = max(maxLen, j - i + 1);
+                }
+        
+                if (prod > 25200) {
+                    break;
+                }
+            }
+        }
+        
+        return maxLen;
+    }
+};
