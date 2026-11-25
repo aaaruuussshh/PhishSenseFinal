@@ -1,0 +1,25 @@
+{
+  "title": "K-th Largest Perfect Subtree Size in Binary Tree",
+  "titleSlug": "k-th-largest-perfect-subtree-size-in-binary-tree",
+  "frontendQuestionId": "3319",
+  "leetcodeUrl": "https://leetcode.com/problems/k-th-largest-perfect-subtree-size-in-binary-tree/",
+  "difficulty": "Medium",
+  "topics": [
+    "Tree",
+    "Depth-First Search",
+    "Sorting",
+    "Binary Tree"
+  ],
+  "language": "Unknown",
+  "verdict": "Accepted",
+  "submissionId": null,
+  "submittedAt": "2026-11-25T13:51:21.486Z",
+  "runtimeMs": null,
+  "memoryKb": null,
+  "totalCorrect": null,
+  "totalTestcases": null,
+  "helpType": "PENDING_SELF_REPORT",
+  "helpLabel": "Pending self report",
+  "focusSeconds": null,
+  "syncedAt": "2026-11-25T13:51:23.343Z"
+}

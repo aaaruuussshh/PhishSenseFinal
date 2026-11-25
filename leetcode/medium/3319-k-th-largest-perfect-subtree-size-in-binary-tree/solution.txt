@@ -1,0 +1,29 @@
+t,vector<int>&temp){
+       
+        if(root==nullptr){
+            return 0;
+        }
+        int left=solve(root->left, temp);
+        int right=solve(root->right, temp);
+        if(left==right && left !=-1){
+            int size=left+right+1;
+            temp.push_back(size);
+            return size;
+        }
+        return -1;
+    }
+    int kthLargestPerfectSubtree(TreeNode* root, int k) {
+        vector<int> temp;
+        solve(root,temp);
+        if(k>temp.size()){
+            return -1;
+        }
+        sort(temp.begin(),temp.end());
+        
+        return temp[temp.size()-k];
+
+
+        
+        
+    }
+};
