@@ -1,28 +1,28 @@
-ode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
+ x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
  * };
  */
 class Solution {
 public:
- int DomCount=0;
-    int dfs(TreeNode* root){
+    int domCount=0;
+    int solve(TreeNode* root){
         if(root==nullptr){
             return 0;
         }
-       
-        int left= dfs(root->left);
-        int right=dfs(root->right);
+        
+      
 
-        int currMax= max({root->val,left,right});
-        if(root->val==currMax){
-         DomCount++;
-        }
-        return  currMax;
+        int left=solve(root->left);
+        int right=solve(root->right);
+        if(root->val >= max(left, right)){
+    domCount++;
+}
+        return max(root->val, max(left, right));
 
     }
     int countDominantNodes(TreeNode* root) {
-        DomCount=0;
-        dfs(root);
-        return DomCount;
+        
+        solve(root);
+        return domCount;
         
     }
 };
