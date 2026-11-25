@@ -1,0 +1,24 @@
+{
+  "title": "Path Sum III",
+  "titleSlug": "path-sum-iii",
+  "frontendQuestionId": "437",
+  "leetcodeUrl": "https://leetcode.com/problems/path-sum-iii/",
+  "difficulty": "Medium",
+  "topics": [
+    "Tree",
+    "Depth-First Search",
+    "Binary Tree"
+  ],
+  "language": "Unknown",
+  "verdict": "Accepted",
+  "submissionId": null,
+  "submittedAt": "2026-11-25T11:03:50.809Z",
+  "runtimeMs": null,
+  "memoryKb": null,
+  "totalCorrect": null,
+  "totalTestcases": null,
+  "helpType": "PENDING_SELF_REPORT",
+  "helpLabel": "Pending self report",
+  "focusSeconds": null,
+  "syncedAt": "2026-11-25T11:03:53.683Z"
+}
