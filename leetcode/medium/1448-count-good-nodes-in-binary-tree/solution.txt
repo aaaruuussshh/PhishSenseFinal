@@ -1,4 +1,4 @@
-y tree node.
+ry tree node.
  * struct TreeNode {
  *     int val;
  *     TreeNode *left;
@@ -10,26 +10,23 @@ y tree node.
  */
 class Solution {
 public:
-    int solve(TreeNode* root, int& count, int MaxSoFar){
+     int count=0;
+    int solve(TreeNode* root,int maxTillNow){
         if(root==nullptr){
             return 0;
         }
-        
-        if(root->val>=MaxSoFar){
+         if(root->val>=maxTillNow){
             count++;
-            MaxSoFar = max(MaxSoFar, root->val);
         }
-        solve(root->left, count, MaxSoFar);
-        solve(root->right, count, MaxSoFar);
+        maxTillNow=max(maxTillNow,root->val);
+        solve(root->left,maxTillNow);
+        solve(root->right,maxTillNow);
+       
         return count;
-        
+
     }
     int goodNodes(TreeNode* root) {
-        int count=0;
-        return solve(root,count, INT_MIN);
-        
-        
-
-        
+        int maxTillNow=INT_MIN;
+        return solve(root,maxTillNow);        
     }
 };
