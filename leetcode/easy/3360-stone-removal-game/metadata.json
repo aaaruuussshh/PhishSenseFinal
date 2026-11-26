@@ -1,0 +1,23 @@
+{
+  "title": "Stone Removal Game",
+  "titleSlug": "stone-removal-game",
+  "frontendQuestionId": "3360",
+  "leetcodeUrl": "https://leetcode.com/problems/stone-removal-game/",
+  "difficulty": "Easy",
+  "topics": [
+    "Math",
+    "Simulation"
+  ],
+  "language": "Unknown",
+  "verdict": "Accepted",
+  "submissionId": null,
+  "submittedAt": "2026-11-26T10:42:19.900Z",
+  "runtimeMs": null,
+  "memoryKb": null,
+  "totalCorrect": null,
+  "totalTestcases": null,
+  "helpType": "PENDING_SELF_REPORT",
+  "helpLabel": "Pending self report",
+  "focusSeconds": null,
+  "syncedAt": "2026-11-26T10:42:21.715Z"
+}
