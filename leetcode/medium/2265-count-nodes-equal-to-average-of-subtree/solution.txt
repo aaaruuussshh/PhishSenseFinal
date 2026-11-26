@@ -1,26 +1,22 @@
- root, int& nodes){
+ solve(TreeNode* root){
         if(root==nullptr){
             return {0,0};
         }
+        pair<int,int> left=solve(root->left);
+         pair<int,int> right=solve(root->right);
+         totalSum=left.first+right.first+root->val;
+         totalNodes= left.second+right.second+1;
+         if(totalSum/totalNodes==root->val){
+            count++;
 
-        pair<int,int>  left =solve(root->left,nodes);
-        pair<int,int> right =solve(root->right,nodes);
-       
+         }
+        return {totalSum,totalNodes};
 
-        int sum=left.first+right.first+root->val;
-         int count = 1 + left.second + right.second;
         
-        if((sum/count)==root->val){
-            nodes++;
-
-        }
-        return {sum, count};
-
     }
     int averageOfSubtree(TreeNode* root) {
-       int nodes=0;
-        solve(root,nodes);
-        return nodes;
+        solve(root);
+        return count;
         
     }
 };
