@@ -1,0 +1,23 @@
+{
+  "title": "Sort Vowels in a String",
+  "titleSlug": "sort-vowels-in-a-string",
+  "frontendQuestionId": "2785",
+  "leetcodeUrl": "https://leetcode.com/problems/sort-vowels-in-a-string/",
+  "difficulty": "Medium",
+  "topics": [
+    "String",
+    "Sorting"
+  ],
+  "language": "Unknown",
+  "verdict": "Accepted",
+  "submissionId": null,
+  "submittedAt": "2026-11-27T09:51:03.809Z",
+  "runtimeMs": null,
+  "memoryKb": null,
+  "totalCorrect": null,
+  "totalTestcases": null,
+  "helpType": "PENDING_SELF_REPORT",
+  "helpLabel": "Pending self report",
+  "focusSeconds": null,
+  "syncedAt": "2026-11-27T09:51:05.569Z"
+}
