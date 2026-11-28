@@ -1,0 +1,23 @@
+{
+  "title": "Maximum Total Subarray Value I",
+  "titleSlug": "maximum-total-subarray-value-i",
+  "frontendQuestionId": "3689",
+  "leetcodeUrl": "https://leetcode.com/problems/maximum-total-subarray-value-i/",
+  "difficulty": "Medium",
+  "topics": [
+    "Array",
+    "Greedy"
+  ],
+  "language": "Unknown",
+  "verdict": "Accepted",
+  "submissionId": null,
+  "submittedAt": "2026-11-28T08:50:00.403Z",
+  "runtimeMs": null,
+  "memoryKb": null,
+  "totalCorrect": null,
+  "totalTestcases": null,
+  "helpType": "PENDING_SELF_REPORT",
+  "helpLabel": "Pending self report",
+  "focusSeconds": null,
+  "syncedAt": "2026-11-28T08:50:02.183Z"
+}
