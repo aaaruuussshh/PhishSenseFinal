@@ -1,0 +1,14 @@
+class Solution {
+public:
+    int minimumDeletions(vector<int>& nums) {
+        int maxi = max_element(nums.begin(),nums.end())-nums.begin();
+        int mini = min_element(nums.begin(),nums.end())-nums.begin();
+        int left = min(mini, maxi);
+int right = max(mini, maxi);
+int n=nums.size();
+int ans = min({n-(right-left-1), n-left, right+1} );
+return ans;
+
+        
+    }
+};
