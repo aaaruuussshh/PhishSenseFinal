@@ -1,0 +1,28 @@
+class Solution {
+public:
+    double findMaxAverage(vector<int>& nums, int k) {
+        int left=0;
+        double currSum=0;
+        int right;
+        if(nums.size()==1){
+            return nums[0];
+        }
+        double maxAvg=INT_MIN;
+        for(right=0;right<k;right++){
+            currSum+=nums[right];
+           
+
+        }
+        maxAvg=max(maxAvg,currSum/(double)k);
+        
+        while(right<nums.size()){
+            currSum+=nums[right];
+            
+            right++;
+            currSum-=nums[left];
+            left++;
+            maxAvg=max(maxAvg,currSum/(double)k);
+        }
+        return maxAvg;
+    }
+};

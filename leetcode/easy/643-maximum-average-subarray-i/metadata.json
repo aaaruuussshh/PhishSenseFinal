@@ -1,0 +1,23 @@
+{
+  "title": "Maximum Average Subarray I",
+  "titleSlug": "maximum-average-subarray-i",
+  "frontendQuestionId": "643",
+  "leetcodeUrl": "https://leetcode.com/problems/maximum-average-subarray-i/",
+  "difficulty": "Easy",
+  "topics": [
+    "Array",
+    "Sliding Window"
+  ],
+  "language": "Unknown",
+  "verdict": "Accepted",
+  "submissionId": null,
+  "submittedAt": "2026-11-28T08:42:26.553Z",
+  "runtimeMs": null,
+  "memoryKb": null,
+  "totalCorrect": null,
+  "totalTestcases": null,
+  "helpType": "PENDING_SELF_REPORT",
+  "helpLabel": "Pending self report",
+  "focusSeconds": null,
+  "syncedAt": "2026-11-28T08:42:28.412Z"
+}
