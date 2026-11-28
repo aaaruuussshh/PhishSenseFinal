@@ -1,0 +1,33 @@
+class Solution {
+public:
+    long long findScore(vector<int>& nums) {
+        vector<bool>arr (nums.size(),false);
+    
+      vector<pair<int,int>> temp;
+
+for(int i=0; i<nums.size(); i++){
+    temp.push_back({nums[i], i});
+}
+sort(temp.begin(),temp.end());
+long long score=0;
+if(nums.size()==1){
+    score+=nums[0];
+    return score;
+}
+for(auto x : temp){
+    int i=x.second;
+    if(arr[i] == false){
+        score+=x.first;
+              if(i>0 && i<nums.size()-1){
+                arr[i-1]=true;
+                arr[i]=true;
+                arr[i+1]=true;
+                }
+                if(i==0){
+                    arr[i]=true;
+                arr[i+1]=true;
+                    
+                }
+                
+                if(i==nums.size()-1){
+      
