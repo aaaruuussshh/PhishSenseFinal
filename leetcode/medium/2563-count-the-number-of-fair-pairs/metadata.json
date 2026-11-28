@@ -1,0 +1,25 @@
+{
+  "title": "Count the Number of Fair Pairs",
+  "titleSlug": "count-the-number-of-fair-pairs",
+  "frontendQuestionId": "2563",
+  "leetcodeUrl": "https://leetcode.com/problems/count-the-number-of-fair-pairs/",
+  "difficulty": "Medium",
+  "topics": [
+    "Array",
+    "Two Pointers",
+    "Binary Search",
+    "Sorting"
+  ],
+  "language": "Unknown",
+  "verdict": "Accepted",
+  "submissionId": null,
+  "submittedAt": "2026-11-28T07:17:05.928Z",
+  "runtimeMs": null,
+  "memoryKb": null,
+  "totalCorrect": null,
+  "totalTestcases": null,
+  "helpType": "PENDING_SELF_REPORT",
+  "helpLabel": "Pending self report",
+  "focusSeconds": null,
+  "syncedAt": "2026-11-28T07:17:07.703Z"
+}
